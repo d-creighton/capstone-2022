@@ -5,15 +5,15 @@ using UnityEngine;
 public class ThirdPersonMovement : MonoBehaviour
 {
     public CharacterController controller;
-
     public Transform camera;
 
-    public float speed = 6f;
+    public float speed = 10f;
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
 
     void Start()
     {
+        // Lock cursor in place for camera movement
         Cursor.lockState = CursorLockMode.Locked;
     }
 
