@@ -162,3 +162,44 @@ Received Import Request.
 Start importing Assets/Scripts/BossStateManager.cs using Guid(2a314dae5614a8b4984f58bf90fd309a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd96b1bfaac916aa5b88cf4fa3c2c01c2') in 0.002356 seconds 
   Import took 0.011512 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 97.363573 seconds.
+  path: Assets/Scripts/Boss Scripts
+  artifactKey: Guid(dcbfc44f103fdb24cafbfd48e7d028bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Boss Scripts using Guid(dcbfc44f103fdb24cafbfd48e7d028bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30e331591be0a71330939ac18854b398') in 0.007162 seconds 
+  Import took 0.011148 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.532932 seconds.
+  path: Assets/Scripts/Boss Scripts/IdleState.cs
+  artifactKey: Guid(a047a1cba8c1c2d4a95fa9ef616291a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Boss Scripts/IdleState.cs using Guid(a047a1cba8c1c2d4a95fa9ef616291a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '779b3fa0e0ef9eac5f2d3ad0f2f98f9f') in 0.007428 seconds 
+  Import took 0.011081 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 45.427541 seconds.
+  path: Assets/Scripts/Boss Scripts/AngryState.cs
+  artifactKey: Guid(ed1451695f27e3946b43e8c98b947245) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Boss Scripts/AngryState.cs using Guid(ed1451695f27e3946b43e8c98b947245) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6e72cafcc31c77bfcdbf5c8e7d79aab') in 0.006561 seconds 
+  Import took 0.014958 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003037 seconds.
+  path: Assets/Scripts/Boss Scripts/AngryState.cs
+  artifactKey: Guid(ed1451695f27e3946b43e8c98b947245) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Boss Scripts/AngryState.cs using Guid(ed1451695f27e3946b43e8c98b947245) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6e72cafcc31c77bfcdbf5c8e7d79aab') in 0.002386 seconds 
+  Import took 0.005550 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 436.930003 seconds.
+  path: Assets/Scripts/Boss Scripts/AngryState.cs
+  artifactKey: Guid(ed1451695f27e3946b43e8c98b947245) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Boss Scripts/AngryState.cs using Guid(ed1451695f27e3946b43e8c98b947245) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd131d64de8c064efd4c45f0e349abadf') in 0.005392 seconds 
+  Import took 0.011400 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
