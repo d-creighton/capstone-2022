@@ -4,10 +4,19 @@ using UnityEngine;
 
 public class IdleState : State
 {
-    public bool can;
+    public AngryState angryState;
+    public bool canSeeThePlayer;
 
     public override State RunCurrentState()
     {
-        return this;
+        if (canSeeThePlayer)
+        {
+            return angryState;
+        }
+        else
+        {
+            return this;
+        }
+        
     }
 }
