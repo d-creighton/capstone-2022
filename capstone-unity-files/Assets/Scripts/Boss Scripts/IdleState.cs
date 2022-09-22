@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IdleState : State
 {
-    public bool can
+    public bool can;
 
     public override State RunCurrentState()
     {
