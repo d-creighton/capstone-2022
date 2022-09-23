@@ -292,6 +292,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed1451695f27e3946b43e8c98b947245, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spinState: {fileID: 1481776844}
+  attackState: {fileID: 478404889}
+  targetInRange: 0
+  targetOutOfRange: 0
 --- !u!1 &478404887
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,6 +339,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b12266533229ac340a84f7aa681dd5e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  angryState: {fileID: 417267102}
+  hasAttacked: 0
 --- !u!1 &595472691
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,6 +1333,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 852c10930bde5004d95ea98da6df64c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackState: {fileID: 478404889}
+  targetFound: 0
 --- !u!1 &1542309045
 GameObject:
   m_ObjectHideFlags: 0
@@ -3458,6 +3466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a314dae5614a8b4984f58bf90fd309a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentState: {fileID: 595472693}
 --- !u!1 &1547606243
 GameObject:
   m_ObjectHideFlags: 3

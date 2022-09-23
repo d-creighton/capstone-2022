@@ -9,6 +9,8 @@ public class IdleState : State
 
     public override State RunCurrentState()
     {
+        // turn randomly
+        
         Debug.Log("Palkia is idle.");
         if (wasAttacked)
         {
