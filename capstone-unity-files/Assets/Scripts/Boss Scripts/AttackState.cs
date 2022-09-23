@@ -6,6 +6,7 @@ public class AttackState : State
 {
     public override State RunCurrentState()
     {
+        Debug.Log("Palkia is attacking the target.");
         return this;
     }
 }

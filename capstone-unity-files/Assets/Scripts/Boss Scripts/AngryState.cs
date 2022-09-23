@@ -6,6 +6,7 @@ public class AngryState : State
 {
     public override State RunCurrentState()
     {
+        Debug.Log("Palkia is angry.");
         return this;
     }
 }

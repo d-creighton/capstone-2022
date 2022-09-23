@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossStateManager : MonoBehaviour
+public class StateManager : MonoBehaviour
 {
-    State currentState;
+    public State currentState;
 
     // Update is called once per frame
     void Update()

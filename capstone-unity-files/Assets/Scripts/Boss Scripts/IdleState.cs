@@ -5,11 +5,12 @@ using UnityEngine;
 public class IdleState : State
 {
     public AngryState angryState;
-    public bool canSeeThePlayer;
+    public bool wasAttacked;
 
     public override State RunCurrentState()
     {
-        if (canSeeThePlayer)
+        Debug.Log("Palkia is idle.");
+        if (wasAttacked)
         {
             return angryState;
         }
