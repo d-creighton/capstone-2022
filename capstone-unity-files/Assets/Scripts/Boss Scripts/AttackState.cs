@@ -10,7 +10,6 @@ public class AttackState : State
     public override State RunCurrentState()
     {
         Debug.Log("Palkia is attacking the target.");
-        hasAttacked = false;
         // Attack the chosen target
         // set hasAttacked to true after attack
 
