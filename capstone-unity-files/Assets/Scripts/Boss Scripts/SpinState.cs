@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpinState : State
 {
     public AttackState attackState;
-    public bool targetFound;
+    public bool targetFound = false;
 
     public override State RunCurrentState()
     {

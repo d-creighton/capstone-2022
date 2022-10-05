@@ -6,8 +6,10 @@ public class AngryState : State
 {
     public SpinState spinState;
     public AttackState attackState;
-    public bool targetInRange;
-    public bool targetOutOfRange;
+    public bool targetInRange = false;
+    public bool targetOutOfRange = false;
+
+    public bool randomTarget;
 
     public override State RunCurrentState()
     {
@@ -17,7 +19,21 @@ public class AngryState : State
         // Find aggressor using weighted prio system
 
         // Call weighted prio system
-        
+        int WeightedPriority.GenerateRandomWeight();
+
+        // Find the target returned
+        randomTarget = WeightedPriority.finalValue;
+        if(randomTarget)
+        {
+            //target is player
+            //find player
+        }
+        else
+        {
+            //target is companion
+            //find companion
+        }
+
 
         if (targetInRange)
         {

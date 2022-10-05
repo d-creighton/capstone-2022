@@ -4,39 +4,48 @@ using UnityEngine;
 
 public class WeightedPriority : MonoBehaviour
 {
-    public List<WeightedValue> weightedValues;
+    public int[] table = 
+    { 
+        80,     // companion weight
+        20      // player weight
+    };
 
-    void Update() 
+    public int total;
+    public int randomNumber;
+    public static int finalValue;
+
+    public void GenerateRandomWeight()
     {
-        //Get weighted value
-        //string randomValue = GetRandomValue(weightedValues);
-        //Debug.Log(randomValue ?? "No entries found");
-    }
-
-    string GetRandomValue(List<WeightedValue> weightedValueList)
-    {
-        string output = null;
-
-        //Getting a random weight value
-        var totalWeight = 0;
-        foreach(var entry in weightedValueList)
+        //tally the total weight
+        foreach(var item in table)
         {
-            totalWeight += entry.weight;
+            total += item;
         }
-        var randomWeightValue = Random.Range(1, totalWeight + 1);
 
-        //Checking where random weight value falls
-        var processedWeight = 0;
-        foreach(var entry in weightedValueList)
+        //draw a random number between 0 and the total weight (100)
+        randomNumber = Random.Range(0, total);
+
+        foreach(var weight in table)
         {
-            processedWeight += entry.weight;
-            if(randomWeightValue <= processedWeight)
+            //compare random number to current weight
+            if(randomNumber <= weight)
             {
-                output = entry.value;
-                break;
+                //award this weight
+                Debug.Log("Award: " + weight);
+                if(weight==80)
+                {
+                    finalValue = 0;
+                }
+                else
+                {
+                    finalValue = 1;
+                }
+                //finalValue = weight;
+            }
+            else
+            {
+                randomNumber -= weight;
             }
         }
-
-        return output;
     }
 }

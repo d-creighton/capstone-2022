@@ -304,6 +304,7 @@ GameObject:
   m_Component:
   - component: {fileID: 417267101}
   - component: {fileID: 417267102}
+  - component: {fileID: 417267103}
   m_Layer: 0
   m_Name: Angry State
   m_TagString: Untagged
@@ -341,6 +342,21 @@ MonoBehaviour:
   attackState: {fileID: 478404889}
   targetInRange: 0
   targetOutOfRange: 0
+  randomTarget: 0
+--- !u!114 &417267103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 417267100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d6f1befec9d23f48b1d09312c61f739, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  table: 5000000014000000
+  total: 0
 --- !u!1 &478404887
 GameObject:
   m_ObjectHideFlags: 0

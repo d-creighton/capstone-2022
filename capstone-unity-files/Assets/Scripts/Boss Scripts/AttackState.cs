@@ -5,7 +5,7 @@ using UnityEngine;
 public class AttackState : State
 {
     public AngryState angryState;
-    public bool hasAttacked;
+    public bool hasAttacked = false;
 
     public override State RunCurrentState()
     {
