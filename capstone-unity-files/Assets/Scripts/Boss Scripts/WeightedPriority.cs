@@ -10,18 +10,23 @@ public class WeightedPriority : MonoBehaviour
         20      // player weight
     };
 
-    public int total;
-    public int randomNumber;
+    public int total = 100;
+    public int randomNumber = 0;
     public static int finalValue;
+    //public static bool canExecute = false;
+
+    
 
     public void GenerateRandomWeight()
     {
+
+
         //tally the total weight
-        foreach(var item in table)
+        /*foreach(var item in table)
         {
             total += item;
         }
-
+        */
         //draw a random number between 0 and the total weight (100)
         randomNumber = Random.Range(0, total);
 
@@ -35,10 +40,12 @@ public class WeightedPriority : MonoBehaviour
                 if(weight==80)
                 {
                     finalValue = 2;
+                    return;
                 }
                 else
                 {
                     finalValue = 1;
+                    return;
                 }
                 //finalValue = weight;
             }
@@ -47,5 +54,8 @@ public class WeightedPriority : MonoBehaviour
                 randomNumber -= weight;
             }
         }
+        //canExecute = false;
+        //total = 0;
+
     }
 }
