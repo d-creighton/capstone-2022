@@ -34,7 +34,7 @@ public class WeightedPriority : MonoBehaviour
                 Debug.Log("Award: " + weight);
                 if(weight==80)
                 {
-                    finalValue = 0;
+                    finalValue = 2;
                 }
                 else
                 {
