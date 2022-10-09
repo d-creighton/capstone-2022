@@ -9,6 +9,8 @@ public class AttackState : State
 
     public override State RunCurrentState()
     {
+        angryState.oneTarget = true;
+
         Debug.Log("Palkia is attacking the target.");
         // Attack the chosen target
         // set hasAttacked to true after attack

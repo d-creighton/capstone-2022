@@ -8,6 +8,8 @@ public class BossIdleState : State
     public AngryState angryState;       // The next state after this state
     public bool wasAttacked = false;    // Determine if the next state should be triggered
 
+    //AngryState selectTarget;
+
     void Start() 
     {
         // Get Rigidbody
@@ -16,6 +18,9 @@ public class BossIdleState : State
 
     public override State RunCurrentState()
     {
+        //selectTarget = GameObject.FindGameObjectWithTag("Enemy").GetComponent<AngryState>();
+        angryState.oneTarget = true;
+
         // turn randomly
         
         Debug.Log("Palkia is idle.");

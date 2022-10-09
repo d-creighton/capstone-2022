@@ -10,8 +10,9 @@ public class AngryState : State
     public bool targetOutOfRange = false;
 
     public int randomTarget;
-    //WeightedPriority canExecute;
     WeightedPriority runMethod;
+
+    public bool oneTarget;
 
     public override State RunCurrentState()
     {
@@ -20,17 +21,19 @@ public class AngryState : State
         // Roar
         // Find aggressor using weighted prio system
 
-        //generateCheck = true;
-
         // Call weighted prio system
         runMethod = GameObject.FindGameObjectWithTag("Generator").GetComponent<WeightedPriority>();
-        //canExecute = GameObject.FindGameObjectWithTag("Generator").GetComponent<WeightedPriority>();
-        //WeightedPriority.canExecute = true;
-        runMethod.GenerateRandomWeight();
+        
 
         // Find the target returned
-        randomTarget = WeightedPriority.finalValue;
-        Debug.Log("randomTarget == " + randomTarget);
+        if(oneTarget)
+        {
+            runMethod.GenerateRandomWeight();
+            randomTarget = WeightedPriority.finalValue;
+            oneTarget = false;
+        }
+
+        //Debug.Log("randomTarget == " + randomTarget);
         if(randomTarget==2)
         {
             //target is companion
