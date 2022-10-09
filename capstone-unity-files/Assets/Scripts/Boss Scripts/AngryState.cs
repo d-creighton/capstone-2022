@@ -7,12 +7,13 @@ public class AngryState : State
     public SpinState spinState;
     public AttackState attackState;
     public bool targetInRange = false;
-    public bool targetOutOfRange = false;
+    //public bool targetOutOfRange = false;
 
     public int randomTarget;
     WeightedPriority runMethod;
 
     public bool oneTarget;
+    GameObject target;
 
     public override State RunCurrentState()
     {
@@ -38,11 +39,17 @@ public class AngryState : State
         {
             //target is companion
             //find companion
+            GameObject target = GameObject.FindGameObjectWithTag("Friendly");
+
+            //check if in range
         }
         else
         {
             //target is player
             //find player
+            GameObject target = GameObject.FindGameObjectWithTag("Player");
+
+            //check if in range
         }
 
 
@@ -50,7 +57,7 @@ public class AngryState : State
         {
             return attackState;
         }
-        else if (targetOutOfRange)
+        else if (!targetInRange)
         {
             return spinState;
         }
