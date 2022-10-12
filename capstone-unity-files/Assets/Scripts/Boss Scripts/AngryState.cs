@@ -6,7 +6,7 @@ public class AngryState : State
 {
     public SpinState spinState;
     public AttackState attackState;
-    public bool targetInRange = false;
+    public bool targetInRange;
     //public bool targetOutOfRange = false;
 
     public int randomTarget;
@@ -15,11 +15,16 @@ public class AngryState : State
     public bool oneTarget;
     GameObject target;
 
+    AudioSource cry;
+
     public override State RunCurrentState()
     {
         Debug.Log("Palkia is angry.");
         // Stop turning randomly
         // Roar
+        cry = GetComponent<AudioSource>();
+        cry.Play();
+
         // Find aggressor using weighted prio system
 
         // Call weighted prio system
