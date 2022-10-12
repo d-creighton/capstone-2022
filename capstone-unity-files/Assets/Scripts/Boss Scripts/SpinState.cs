@@ -11,6 +11,7 @@ public class SpinState : State
     {
         Debug.Log("Palkia is aiming at the target.");
         // Face target found in AngryState
+        // turn to that target until FieldOfView.canSeeTarget == true
 
         if (targetFound)
         {
