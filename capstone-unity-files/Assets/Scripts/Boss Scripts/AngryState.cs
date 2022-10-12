@@ -6,6 +6,7 @@ public class AngryState : State
 {
     public SpinState spinState;
     public AttackState attackState;
+    public FieldOfView fov;
     public bool targetInRange;
     //public bool targetOutOfRange = false;
 
@@ -13,9 +14,11 @@ public class AngryState : State
     WeightedPriority runMethod;
 
     public bool oneTarget;
-    GameObject target;
+    public GameObject target;
 
-    AudioSource cry;
+    public AudioSource cry;
+
+    
 
     public override State RunCurrentState()
     {
@@ -44,17 +47,33 @@ public class AngryState : State
         {
             //target is companion
             //find companion
-            GameObject target = GameObject.FindGameObjectWithTag("Friendly");
+            target = GameObject.FindGameObjectWithTag("Friendly");
 
             //check if in range
+            if(fov.canSeeTarget)
+            {
+                targetInRange = true;
+            }
+            else
+            {
+                targetInRange = false;
+            }
         }
         else
         {
             //target is player
             //find player
-            GameObject target = GameObject.FindGameObjectWithTag("Player");
+            target = GameObject.FindGameObjectWithTag("Player");
 
             //check if in range
+            if(fov.canSeeTarget)
+            {
+                targetInRange = true;
+            }
+            else
+            {
+                targetInRange = false;
+            }
         }
 
 

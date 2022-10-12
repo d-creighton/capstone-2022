@@ -1127,7 +1127,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.117014244, y: -0.000000017100042, z: 0.000000002011959, w: 0.99313027}
+  m_LocalRotation: {x: 0.117014244, y: 0.000000017100048, z: -0.0000000020119832, w: 0.99313027}
   m_LocalPosition: {x: 0, y: 6.74, z: -18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1398,7 +1398,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1366985189}
-  m_LocalRotation: {x: 0.11701424, y: -0.000000017088176, z: 0.0000000020133915, w: 0.99313027}
+  m_LocalRotation: {x: 0.11701424, y: 0.00000001708818, z: -0.000000002013392, w: 0.99313027}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1417,7 +1417,7 @@ GameObject:
   - component: {fileID: 1424818780}
   - component: {fileID: 1424818782}
   - component: {fileID: 1424818781}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1499,7 +1499,7 @@ GameObject:
   - component: {fileID: 1426944897}
   - component: {fileID: 1426944899}
   - component: {fileID: 1426944898}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3711,6 +3711,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1546558624}
   - component: {fileID: 1546558625}
+  - component: {fileID: 1546558626}
   m_Layer: 0
   m_Name: Boss GameObject
   m_TagString: Enemy
@@ -3746,6 +3747,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: {fileID: 595472693}
+--- !u!114 &1546558626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546558623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b5c40c2cc85ebe48af33fe5d93e3b7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1547606243
 GameObject:
   m_ObjectHideFlags: 3
@@ -3885,7 +3898,7 @@ GameObject:
   - component: {fileID: 1583119572}
   - component: {fileID: 1583119574}
   - component: {fileID: 1583119575}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -4148,7 +4161,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1989969165}
-  m_LocalRotation: {x: 0.13505942, y: 8.719026e-16, z: -1.7869098e-17, w: 0.9908375}
+  m_LocalRotation: {x: 0.1350594, y: -0.00000001476463, z: 0.0000000020125421, w: 0.9908375}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
