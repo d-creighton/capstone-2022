@@ -9,9 +9,10 @@ public class ATBSystem : MonoBehaviour
 
     public int maxATB = 100;
     public int currentATB;
+    public Text ATBtext;
 
     // ATB regen rate
-    public WaitForSeconds regenTick = new WaitForSeconds(2f);
+    public WaitForSeconds regenTick = new WaitForSeconds(1f);
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,7 @@ public class ATBSystem : MonoBehaviour
         currentATB = 0;
         ATBbar.maxValue = maxATB;
         ATBbar.value = currentATB;
+        ATBtext.text = "MP " + currentATB + "/" + maxATB;
 
         // begin to generate ATB when the game starts
         StartCoroutine(GenerateATB());
@@ -46,6 +48,7 @@ public class ATBSystem : MonoBehaviour
             currentATB += maxATB / 100;
             ATBbar.value = currentATB;
             yield return regenTick;
+            ATBtext.text = "MP " + currentATB + "/" + maxATB;
         }
     }
 }

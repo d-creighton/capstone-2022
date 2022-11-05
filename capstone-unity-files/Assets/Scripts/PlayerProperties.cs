@@ -14,6 +14,7 @@ public class PlayerProperties : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthBar.SetMaxSliderValue(maxHealth);
+        healthBar.SetLabel(currentHealth, maxHealth);
     }
 
     // Update is called once per frame
@@ -26,5 +27,6 @@ public class PlayerProperties : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetValue(currentHealth);
+        healthBar.SetLabel(currentHealth, maxHealth);
     }
 }

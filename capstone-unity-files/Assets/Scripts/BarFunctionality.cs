@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class BarFunctionality : MonoBehaviour
 {
     public Slider slider;
+    public Text label;
     
     public void SetMaxSliderValue(int value)
     {
@@ -16,5 +17,10 @@ public class BarFunctionality : MonoBehaviour
     public void SetValue(int value)
     {
         slider.value = value;
+    }
+
+    public void SetLabel(int currentValue, int maxValue)
+    {
+        label.text = "HP " + currentValue + "/" + maxValue;
     }
 }
