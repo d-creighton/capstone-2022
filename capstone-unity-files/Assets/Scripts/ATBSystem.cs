@@ -26,6 +26,7 @@ public class ATBSystem : MonoBehaviour
         StartCoroutine(GenerateATB());
     }
 
+    // use resources built up during the battle
     public void UseATB(int amount)
     {
         if(currentATB - amount >= 0)
