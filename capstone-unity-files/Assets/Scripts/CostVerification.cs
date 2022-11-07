@@ -11,11 +11,19 @@ public class CostVerification : MonoBehaviour
     public int price;
 
     public ATBSystem ATB;
+    public KeyCodeToOnClick verify;
 
     // Start is called before the first frame update
     void Start()
     {
-        canInteract = false;
+        if(verify.needsVerified)
+        {
+            canInteract = false;
+        }
+        else
+        {
+            canInteract = true;
+        }
     }
 
     // Update is called once per frame

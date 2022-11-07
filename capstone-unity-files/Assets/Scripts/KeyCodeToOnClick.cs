@@ -8,6 +8,7 @@ public class KeyCodeToOnClick : MonoBehaviour
     public KeyCode key;
     public Button button;
 
+    public bool needsVerified;
     public CostVerification verify;
 
     // Start is called before the first frame update
