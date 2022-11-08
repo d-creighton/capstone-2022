@@ -12,7 +12,7 @@ public class ATBSystem : MonoBehaviour
     public Text ATBtext;
 
     // ATB regen rate
-    public WaitForSeconds regenTick = new WaitForSeconds(1f);
+    public WaitForSeconds regenTick = new WaitForSeconds(.1f);
 
     // Start is called before the first frame update
     void Start()
