@@ -6,11 +6,12 @@ using UnityEngine.UI;
 public class ATBSystem : MonoBehaviour
 {
     public Slider ATBbar;
+    public Text ATBtext;
 
     public int maxATB = 100;
     public int currentATB;
-    public Text ATBtext;
-
+    public bool isGenerating;
+    
     // ATB regen rate
     public WaitForSeconds regenTick = new WaitForSeconds(.1f);
 
@@ -33,6 +34,12 @@ public class ATBSystem : MonoBehaviour
         {
             currentATB -= amount;
             ATBbar.value = currentATB;
+            ATBtext.text = "MP " + currentATB + "/" + maxATB;
+
+            if(currentATB < maxATB && !isGenerating)
+            {
+                StartCoroutine(GenerateATB());
+            }
         }
         else
         {
@@ -42,14 +49,20 @@ public class ATBSystem : MonoBehaviour
 
     private IEnumerator GenerateATB()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
 
         while(currentATB < maxATB)
         {
+            isGenerating = true;
             currentATB += maxATB / 100;
             ATBbar.value = currentATB;
             yield return regenTick;
             ATBtext.text = "MP " + currentATB + "/" + maxATB;
+        }
+        if(currentATB == maxATB)
+        {
+            isGenerating = false;
+            
         }
     }
 }
