@@ -1,6 +1,10 @@
 Using pre-set license
 Built from '2020.3/release' branch; Version is '2020.3.12f1 (b3b2c6512326) revision 11776710'; Using compiler version '192528614'; Build Type 'Release'
+<<<<<<< HEAD
 OS: 'Windows 10 Home; OS build 19044.2130; Version 2009; 64bit' Language: 'en' Physical Memory: 16334 MB
+=======
+OS: 'Windows 10 Home; OS build 19044.2251; Version 2009; 64bit' Language: 'en' Physical Memory: 16334 MB
+>>>>>>> companion-pre-merge
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
@@ -15,11 +19,19 @@ D:/Unity/Projects/capstone-2022/capstone-unity-files
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
+<<<<<<< HEAD
 62491
 Successfully changed project path to: D:/Unity/Projects/capstone-2022/capstone-unity-files
 D:/Unity/Projects/capstone-2022/capstone-unity-files
 Using Asset Import Pipeline V2.
 Refreshing native plugins compatible for Editor in 48.00 ms, found 2 plugins.
+=======
+60498
+Successfully changed project path to: D:/Unity/Projects/capstone-2022/capstone-unity-files
+D:/Unity/Projects/capstone-2022/capstone-unity-files
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 43.58 ms, found 2 plugins.
+>>>>>>> companion-pre-merge
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.12f1 (b3b2c6512326)
 [Subsystems] Discovering subsystems at path D:/Unity/2020.3.12f1/Editor/Data/Resources/UnitySubsystems
@@ -35,6 +47,7 @@ Initialize mono
 Mono path[0] = 'D:/Unity/2020.3.12f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'D:/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/etc'
+<<<<<<< HEAD
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56124
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
@@ -59,13 +72,43 @@ Platform modules already initialized, skipping
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
 Refreshing native plugins compatible for Editor in 0.45 ms, found 2 plugins.
+=======
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56176
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity/2020.3.12f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001679 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 42.03 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.156 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.003842 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.50 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.232 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.46 ms, found 2 plugins.
+>>>>>>> companion-pre-merge
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1931 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 86.9 MB.
 System memory in use after: 86.9 MB.
 
 Unloading 21 unused Assets to reduce memory usage. Loaded Objects now: 2368.
+<<<<<<< HEAD
 Total: 2.397700 ms (FindLiveObjects: 0.210100 ms CreateObjectMapping: 0.046500 ms MarkObjects: 1.972200 ms  DeleteObjects: 0.167600 ms)
+=======
+Total: 2.950700 ms (FindLiveObjects: 0.223200 ms CreateObjectMapping: 0.046600 ms MarkObjects: 2.479900 ms  DeleteObjects: 0.199300 ms)
+>>>>>>> companion-pre-merge
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -79,14 +122,22 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
+<<<<<<< HEAD
   path: Assets/Scripts/ATBSystem.cs
   artifactKey: Guid(c995104830165764ca706c0351761a5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/ATBSystem.cs using Guid(c995104830165764ca706c0351761a5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '789c0f51215b42d5579a1cd9afef0d8a') in 0.103903 seconds 
   Import took 0.107906 seconds .
+=======
+  path: Assets/Scripts/Combat Menu Scripts
+  artifactKey: Guid(61c67033d379f72448acf6f8566f0b08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Combat Menu Scripts using Guid(61c67033d379f72448acf6f8566f0b08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f4bb8fa45843d51dd40839a7a2161bde') in 0.009962 seconds 
+  Import took 0.013476 seconds .
+>>>>>>> companion-pre-merge
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+<<<<<<< HEAD
 Registered in 0.003445 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
@@ -96,13 +147,28 @@ Mono: successfully reloaded assembly
 - Completed reload, in  1.137 seconds
 Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.44 ms, found 2 plugins.
+=======
+Registered in 0.003355 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.55 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.166 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.62 ms, found 2 plugins.
+>>>>>>> companion-pre-merge
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1903 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 84.6 MB.
 System memory in use after: 84.7 MB.
 
 Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 2372.
+<<<<<<< HEAD
 Total: 2.547400 ms (FindLiveObjects: 0.227800 ms CreateObjectMapping: 0.046800 ms MarkObjects: 2.117900 ms  DeleteObjects: 0.153600 ms)
+=======
+Total: 2.707600 ms (FindLiveObjects: 0.217500 ms CreateObjectMapping: 0.046200 ms MarkObjects: 2.266600 ms  DeleteObjects: 0.175800 ms)
+>>>>>>> companion-pre-merge
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -116,21 +182,136 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
+<<<<<<< HEAD
   Time since last request: 220.749243 seconds.
   path: Assets/Scripts/ATBSystem.cs
   artifactKey: Guid(c995104830165764ca706c0351761a5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/ATBSystem.cs using Guid(c995104830165764ca706c0351761a5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f22056c722da3b6532a3046cd4c0d929') in 0.006109 seconds 
   Import took 0.010429 seconds .
+=======
+  Time since last request: 72.210339 seconds.
+  path: Assets/Editor/FieldOfViewEditor.cs
+  artifactKey: Guid(01b098f3c07d4214da7eaed7cf90f73b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Editor/FieldOfViewEditor.cs using Guid(01b098f3c07d4214da7eaed7cf90f73b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc12cb7505c3aa255113639e07bdaecf') in 0.057945 seconds 
+  Import took 0.061359 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 39.887831 seconds.
+  path: Assets/Scripts/Boss Scripts
+  artifactKey: Guid(dcbfc44f103fdb24cafbfd48e7d028bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Boss Scripts using Guid(dcbfc44f103fdb24cafbfd48e7d028bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0d4d295e4f1be4d9139efdb7520547f') in 0.007767 seconds 
+  Import took 0.016499 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.435372 seconds.
+  path: Assets/Scripts/Boss Scripts/FieldOfView.cs
+  artifactKey: Guid(4b5c40c2cc85ebe48af33fe5d93e3b7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Boss Scripts/FieldOfView.cs using Guid(4b5c40c2cc85ebe48af33fe5d93e3b7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3dd3395f2b9920570306d1d311813e3a') in 0.005922 seconds 
+  Import took 0.014474 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.021729 seconds.
+  path: Assets/Scripts/Boss Scripts/FieldOfView.cs
+  artifactKey: Guid(4b5c40c2cc85ebe48af33fe5d93e3b7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Boss Scripts/FieldOfView.cs using Guid(4b5c40c2cc85ebe48af33fe5d93e3b7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3dd3395f2b9920570306d1d311813e3a') in 0.002382 seconds 
+  Import took 0.005752 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 241.466597 seconds.
+  path: Assets/Scripts/Shared Scripts
+  artifactKey: Guid(c4e89108b9cddb3409e12396076998fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Shared Scripts using Guid(c4e89108b9cddb3409e12396076998fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c689f4809ca1fe697a0655cdd137abd') in 0.006782 seconds 
+  Import took 0.015735 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1980.152563 seconds.
+  path: Assets/Scripts/Companion Scripts/CompanionAttackState.cs
+  artifactKey: Guid(3c83a7887fdccb042bddb0b06361a912) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Companion Scripts/CompanionAttackState.cs using Guid(3c83a7887fdccb042bddb0b06361a912) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc93e217de9652697b052751bf1f1fec') in 0.006272 seconds 
+  Import took 0.010187 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.187600 seconds.
+  path: Assets/Scripts/Companion Scripts/CompanionIdleState.cs
+  artifactKey: Guid(60edbb41e2d96854c9873f3f3a9e4224) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Companion Scripts/CompanionIdleState.cs using Guid(60edbb41e2d96854c9873f3f3a9e4224) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'adef5daf74d8b7185e8fa23313c2609e') in 0.010094 seconds 
+  Import took 0.019640 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 38.137634 seconds.
+  path: Assets/Scripts/Companion Scripts/SeekingState.cs
+  artifactKey: Guid(0cc66827abfe1254888fc04c0581bbbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Companion Scripts/SeekingState.cs using Guid(0cc66827abfe1254888fc04c0581bbbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c44b369f08545a5adcf563a697c91167') in 0.006208 seconds 
+  Import took 0.014952 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 93.557325 seconds.
+  path: Assets/Scripts/Boss Scripts/WeightedPriority.cs
+  artifactKey: Guid(5d6f1befec9d23f48b1d09312c61f739) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Boss Scripts/WeightedPriority.cs using Guid(5d6f1befec9d23f48b1d09312c61f739) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8a9f06088b4500c26861cea4c9d143e') in 0.006158 seconds 
+  Import took 0.014770 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13017.128156 seconds.
+  path: Assets/Scripts/Boss Scripts/AttackState.cs
+  artifactKey: Guid(b12266533229ac340a84f7aa681dd5e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Boss Scripts/AttackState.cs using Guid(b12266533229ac340a84f7aa681dd5e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea4a3cf94a45074310a304ec8dd7eae9') in 0.008138 seconds 
+  Import took 0.037995 seconds .
+>>>>>>> companion-pre-merge
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+<<<<<<< HEAD
 Registered in 0.003576 seconds.
+=======
+Registered in 0.197648 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.44 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.374 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.48 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1907 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 84.8 MB.
+System memory in use after: 84.8 MB.
+
+Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 2380.
+Total: 3.182900 ms (FindLiveObjects: 0.227600 ms CreateObjectMapping: 0.049400 ms MarkObjects: 2.709200 ms  DeleteObjects: 0.195200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008312 seconds.
+>>>>>>> companion-pre-merge
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.46 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
+<<<<<<< HEAD
 - Completed reload, in  1.218 seconds
 Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.51 ms, found 2 plugins.
@@ -179,6 +360,18 @@ System memory in use after: 84.7 MB.
 
 Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 2378.
 Total: 3.595500 ms (FindLiveObjects: 0.248500 ms CreateObjectMapping: 0.050400 ms MarkObjects: 3.143300 ms  DeleteObjects: 0.151000 ms)
+=======
+- Completed reload, in  1.298 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.45 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1907 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 84.8 MB.
+System memory in use after: 84.8 MB.
+
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 2383.
+Total: 2.538200 ms (FindLiveObjects: 0.199000 ms CreateObjectMapping: 0.048600 ms MarkObjects: 2.136300 ms  DeleteObjects: 0.153200 ms)
+>>>>>>> companion-pre-merge
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -192,15 +385,32 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
+<<<<<<< HEAD
   Time since last request: 80.847849 seconds.
   path: Assets/Scripts/ATBSystem.cs
   artifactKey: Guid(c995104830165764ca706c0351761a5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/ATBSystem.cs using Guid(c995104830165764ca706c0351761a5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '208e26fedc9c0c3c672b0a798395bec0') in 0.005015 seconds 
   Import took 0.008582 seconds .
+=======
+  Time since last request: 4556.414239 seconds.
+  path: Assets/Scripts/Companion Scripts
+  artifactKey: Guid(4df61cd15e03a9048b934760d8629c36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Companion Scripts using Guid(4df61cd15e03a9048b934760d8629c36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'faac4d479c66d5c652f1395d1d4518b0') in 0.009911 seconds 
+  Import took 0.015536 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.475153 seconds.
+  path: Assets/Scripts/Companion Scripts/CompanionProperties.cs
+  artifactKey: Guid(d3d48893b70abcf46809a3ddd246c4d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Companion Scripts/CompanionProperties.cs using Guid(d3d48893b70abcf46809a3ddd246c4d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b314a3dcfb8b77a59f93836ea66169ca') in 0.006487 seconds 
+  Import took 0.045345 seconds .
+>>>>>>> companion-pre-merge
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+<<<<<<< HEAD
 Registered in 0.003509 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
@@ -217,6 +427,54 @@ System memory in use after: 84.7 MB.
 
 Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 2381.
 Total: 3.025800 ms (FindLiveObjects: 0.214200 ms CreateObjectMapping: 0.049900 ms MarkObjects: 2.615800 ms  DeleteObjects: 0.144400 ms)
+=======
+Registered in 0.003383 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.45 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.084 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.43 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1908 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 84.8 MB.
+System memory in use after: 84.8 MB.
+
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 2387.
+Total: 2.864900 ms (FindLiveObjects: 0.217100 ms CreateObjectMapping: 0.049200 ms MarkObjects: 2.457600 ms  DeleteObjects: 0.139700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003252 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.45 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.091 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.43 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1907 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 84.8 MB.
+System memory in use after: 84.8 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 2389.
+Total: 2.371500 ms (FindLiveObjects: 0.212500 ms CreateObjectMapping: 0.047800 ms MarkObjects: 1.967000 ms  DeleteObjects: 0.142900 ms)
+>>>>>>> companion-pre-merge
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -230,15 +488,24 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
+<<<<<<< HEAD
   Time since last request: 124.123290 seconds.
   path: Assets/Scripts/ATBSystem.cs
   artifactKey: Guid(c995104830165764ca706c0351761a5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scripts/ATBSystem.cs using Guid(c995104830165764ca706c0351761a5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6858bed5e4c140a193aa255d1ea51fa7') in 0.004978 seconds 
   Import took 0.013199 seconds .
+=======
+  Time since last request: 334.029889 seconds.
+  path: Assets/Scripts/Shared Scripts/Properties.cs
+  artifactKey: Guid(14fb34df206048940a54edaccb9cd1ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Shared Scripts/Properties.cs using Guid(14fb34df206048940a54edaccb9cd1ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e5bc08204d9f5c20224fa228f6631d9') in 0.011527 seconds 
+  Import took 0.016777 seconds .
+>>>>>>> companion-pre-merge
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+<<<<<<< HEAD
 Registered in 0.003510 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
@@ -255,6 +522,24 @@ System memory in use after: 84.7 MB.
 
 Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 2384.
 Total: 2.369700 ms (FindLiveObjects: 0.208400 ms CreateObjectMapping: 0.047300 ms MarkObjects: 1.959500 ms  DeleteObjects: 0.153200 ms)
+=======
+Registered in 0.003382 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.43 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.117 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.45 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1908 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 84.8 MB.
+System memory in use after: 84.9 MB.
+
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 2393.
+Total: 3.596100 ms (FindLiveObjects: 0.278900 ms CreateObjectMapping: 0.057200 ms MarkObjects: 3.090700 ms  DeleteObjects: 0.167400 ms)
+>>>>>>> companion-pre-merge
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -266,6 +551,7 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+<<<<<<< HEAD
 ========================================================================
 Received Import Request.
   Time since last request: 60.540585 seconds.
@@ -274,4 +560,6 @@ Received Import Request.
 Start importing Assets/Scripts/ATBSystem.cs using Guid(c995104830165764ca706c0351761a5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2017e73e840adb6716ef39f5973007c2') in 0.005019 seconds 
   Import took 0.013080 seconds .
 
+=======
+>>>>>>> companion-pre-merge
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
