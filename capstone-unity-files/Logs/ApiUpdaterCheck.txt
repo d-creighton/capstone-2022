@@ -313,6 +313,7 @@ candidates check time : 53ms
 console write time    : 0ms
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 [api-updater (non-obsolete-error-filter)] 11/19/2022 8:23:42 PM : Starting D:/Unity/2020.3.12f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
 [api-updater (non-obsolete-error-filter)] 
 ----------------------------------
@@ -362,6 +363,8 @@ candidates parse time : 1ms
 C# parse time         : 1885ms
 candidates check time : 60ms
 =======
+=======
+>>>>>>> companion-pre-merge
 [api-updater (non-obsolete-error-filter)] 10/11/2022 10:16:04 PM : Starting D:/Unity/2020.3.12f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
 [api-updater (non-obsolete-error-filter)] 
 ----------------------------------
@@ -380,6 +383,9 @@ moved types parse time: 60ms
 candidates parse time : 1ms
 C# parse time         : 228ms
 candidates check time : 48ms
+<<<<<<< HEAD
+>>>>>>> companion-pre-merge
+=======
 >>>>>>> companion-pre-merge
 console write time    : 0ms
 
