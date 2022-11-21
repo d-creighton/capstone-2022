@@ -24,6 +24,7 @@ public class CompanionIdleState : State
         Debug.Log("Torterra is awaiting commands.");
         if (commandReceived)
         {
+            commandReceived = false;
             return seekingState;
         }
         else
