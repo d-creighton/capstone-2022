@@ -23,7 +23,7 @@ public class BossIdleState : State
 
         // turn randomly
         
-        Debug.Log("Palkia is idle.");
+        //Debug.Log("Palkia is idle.");
 
         if (wasAttacked)
         {

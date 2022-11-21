@@ -9,7 +9,7 @@ public class SpinState : State
 
     public override State RunCurrentState()
     {
-        Debug.Log("Palkia is aiming at the target.");
+        //Debug.Log("Palkia is aiming at the target.");
         // Face target found in AngryState
         // turn to that target until FieldOfView.canSeeTarget == true
 

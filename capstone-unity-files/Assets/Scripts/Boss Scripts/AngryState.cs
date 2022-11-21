@@ -22,7 +22,7 @@ public class AngryState : State
 
     public override State RunCurrentState()
     {
-        Debug.Log("Palkia is angry.");
+        //Debug.Log("Palkia is angry.");
         // Stop turning randomly
         // Roar
         cry = GetComponent<AudioSource>();

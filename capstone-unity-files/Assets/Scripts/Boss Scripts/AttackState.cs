@@ -11,7 +11,7 @@ public class AttackState : State
     {
         angryState.oneTarget = true;
 
-        Debug.Log("Palkia is attacking the target.");
+        //Debug.Log("Palkia is attacking the target.");
         // Attack the chosen target
         // set hasAttacked to true after attack
 
