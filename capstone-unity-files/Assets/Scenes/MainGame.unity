@@ -1371,7 +1371,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.117014244, y: 0.000000017100048, z: -0.0000000020119832, w: 0.99313027}
+  m_LocalRotation: {x: 0.117014244, y: -0.000000017100042, z: 0.000000002011959, w: 0.99313027}
   m_LocalPosition: {x: 0, y: 6.74, z: -18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1971,6 +1971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atackState: {fileID: 1456381049}
   bossFound: 0
+  boss: {fileID: 0}
 --- !u!4 &997645832
 Transform:
   m_ObjectHideFlags: 0
@@ -2423,6 +2424,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1119954701}
   - component: {fileID: 1119954700}
+  - component: {fileID: 1119954702}
   m_Layer: 0
   m_Name: Companion GameObject
   m_TagString: Untagged
@@ -2458,6 +2460,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1119954702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119954699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14fb34df206048940a54edaccb9cd1ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitName: Torterra
+  unitLevel: 50
+  maxHP: 100
+  currentHP: 100
+  healthBar: {fileID: 1414650286}
 --- !u!1 &1126652579
 GameObject:
   m_ObjectHideFlags: 0
@@ -2936,7 +2955,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1366985189}
-  m_LocalRotation: {x: 0.11701424, y: 0.00000001708818, z: -0.000000002013392, w: 0.99313027}
+  m_LocalRotation: {x: 0.11701424, y: -0.000000017088176, z: 0.0000000020133915, w: 0.99313027}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3602,6 +3621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackChoice: {fileID: 1456381049}
   giveCommand: {fileID: 720481508}
+  targetRef: {fileID: 1546558627}
 --- !u!1 &1492118200
 GameObject:
   m_ObjectHideFlags: 0
@@ -5756,6 +5776,7 @@ GameObject:
   - component: {fileID: 1546558624}
   - component: {fileID: 1546558625}
   - component: {fileID: 1546558626}
+  - component: {fileID: 1546558627}
   m_Layer: 0
   m_Name: Boss GameObject
   m_TagString: Enemy
@@ -5814,6 +5835,23 @@ MonoBehaviour:
     m_Bits: 0
   canSeeTarget: 0
   angryState: {fileID: 1452377227}
+--- !u!114 &1546558627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546558623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14fb34df206048940a54edaccb9cd1ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitName: 
+  unitLevel: 0
+  maxHP: 0
+  currentHP: 0
+  healthBar: {fileID: 0}
 --- !u!1 &1547606243
 GameObject:
   m_ObjectHideFlags: 3
@@ -7061,7 +7099,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1989969165}
-  m_LocalRotation: {x: 0.1350594, y: -0.00000001476463, z: 0.0000000020125421, w: 0.9908375}
+  m_LocalRotation: {x: 0.13505942, y: 8.719026e-16, z: -1.7869098e-17, w: 0.9908375}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
