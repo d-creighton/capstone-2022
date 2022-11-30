@@ -12,10 +12,13 @@ public class CompanionAttackState : State
     public int attackStrength = 0;
 
     public Attack attackPool;
+    public AudioSource pokemonCry;
 
     public override State RunCurrentState()
     {
         // Cry semi-randomly
+        pokemonCry = GetComponent<AudioSource>();
+        pokemonCry.Play();
         // Attack boss
         if(attackStrength == 1)
         {

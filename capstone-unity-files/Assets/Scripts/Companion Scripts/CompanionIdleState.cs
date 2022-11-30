@@ -6,6 +6,10 @@ public class CompanionIdleState : State
 {
     public SeekingState seekingState;
     public bool commandReceived = false;
+    //public bool isIdle = true;
+
+    //public GameObject thisUnit;
+    //public AudioSource cry;
 
     public override State RunCurrentState()
     {
@@ -17,6 +21,14 @@ public class CompanionIdleState : State
             // if just cried
             // wait at least x number of seconds
             // repeat
+
+            //take weighted number to determine cry
+        //pokemonCry = GetComponent<AudioSource>();
+        //pokemonCry.Play();
+        //cry = GetComponent<AudioSource>();
+        //cry.Play();
+        //StartCoroutine(CryRepeater());
+
 
         // Dodge boss attacks
         // Execute small auto-attacks
@@ -32,4 +44,14 @@ public class CompanionIdleState : State
             return this;
         }
     }
+/*
+    private IEnumerator CryRepeater()
+    {
+        while(isIdle)
+        {
+            yield return new WaitForSeconds(5f);
+            cry.Play();
+        }
+    }
+*/
 }
