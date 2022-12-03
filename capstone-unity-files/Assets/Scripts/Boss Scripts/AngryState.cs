@@ -32,7 +32,7 @@ public class AngryState : State
 
         // Call weighted prio system
         runMethod = GameObject.FindGameObjectWithTag("Generator").GetComponent<WeightedPriority>();
-        
+        oneTarget = true;
 
         // Find the target returned
         if(oneTarget)

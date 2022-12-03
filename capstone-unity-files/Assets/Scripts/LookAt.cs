@@ -21,7 +21,7 @@ public class LookAt : MonoBehaviour
 
     public bool LookAtTarget()
     {
-        boss = GameObject.FindWithTag("Enemy");
+        //boss = GameObject.FindWithTag("Enemy");
         Transform bossTransform = boss.GetComponent<Transform>();
 
         Vector3 direction = bossTransform.position - transform.position;
