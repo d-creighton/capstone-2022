@@ -18,14 +18,34 @@ public class Attack : MonoBehaviour
     public void WeakAttack()
     {
         //subtract 25 (1/4) health from target
-        targetRef.TakeDamage(25);
+        bool isDead = targetRef.TakeDamage(25);
         //spawn projectile in direction of target
+
+        //check if target has died
+        if (isDead)
+        {
+            //if boss died end game
+        }
+        else
+        {
+            return;
+        }
     }
 
     public void StrongAttack()
     {
         //subtract 50 (1/2) health from target
-        targetRef.TakeDamage(50);
+        bool isDead = targetRef.TakeDamage(50);
         //spawn projectile in direction of target
+
+        //check if target has died
+        if (isDead)
+        {
+            //if boss died end game
+        }
+        else
+        {
+            return;
+        }
     }
 }

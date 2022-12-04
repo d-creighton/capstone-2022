@@ -23,9 +23,30 @@ public class PlayerProperties : MonoBehaviour
         //damage code
     }
 
-    void TakeDamge(int damage)
+    public bool TakeDamge(int damage)
     {
         currentHealth -= damage;
+        healthBar.SetValue(currentHealth);
+        healthBar.SetLabel(currentHealth, maxHealth);
+
+        if(currentHealth <= 0)
+        {
+            currentHealth = 0;
+            healthBar.SetValue(currentHealth);
+            healthBar.SetLabel(currentHealth, maxHealth);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    void Heal(int potion)
+    {
+        currentHealth += potion;
+        if(currentHealth > maxHealth) { currentHealth = maxHealth; }
+        
         healthBar.SetValue(currentHealth);
         healthBar.SetLabel(currentHealth, maxHealth);
     }
