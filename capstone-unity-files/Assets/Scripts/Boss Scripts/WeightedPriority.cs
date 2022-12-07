@@ -38,14 +38,16 @@ public class WeightedPriority : MonoBehaviour
             if(randomNumber <= weight)
             {
                 //award this weight
-                Debug.Log("Award: " + weight);
+                
                 if(weight==80)
                 {
+                    Debug.Log("Targetting AI");
                     finalValue = 2;
                     return;
                 }
                 else
                 {
+                    Debug.Log("Targetting player");
                     finalValue = 1;
                     return;
                 }

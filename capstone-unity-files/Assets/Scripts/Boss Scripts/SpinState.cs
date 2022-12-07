@@ -7,14 +7,24 @@ public class SpinState : State
     public AttackState attackState;
     public bool targetFound = false;
 
+    bool flag = true;
+
     public override State RunCurrentState()
     {
-        //Debug.Log("Palkia is aiming at the target.");
+
+        if (flag)
+        {
+            Debug.Log("Palkia is aiming at the target.");
+            flag = false;
+        }        
+        
         // Face target found in AngryState
         // turn to that target until FieldOfView.canSeeTarget == true
 
         if (targetFound)
         {
+            targetFound = false;
+            attackState.canAtack = true;
             return attackState;
         }
         else

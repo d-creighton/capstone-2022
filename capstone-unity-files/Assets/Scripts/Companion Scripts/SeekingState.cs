@@ -24,7 +24,7 @@ public class SeekingState : State
 
         //bossFound = true;
 
-        Debug.Log("Torterra is seeking Palkia.");
+        //Debug.Log("Torterra is seeking Palkia.");
         if (bossFound)
         {
             bossFound = false;

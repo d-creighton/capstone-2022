@@ -33,7 +33,7 @@ public class CompanionIdleState : State
         // Dodge boss attacks
         // Execute small auto-attacks
 
-        Debug.Log("Torterra is awaiting commands.");
+        //Debug.Log("Torterra is awaiting commands.");
         if (commandReceived)
         {
             commandReceived = false;

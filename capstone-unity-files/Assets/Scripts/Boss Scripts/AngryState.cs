@@ -11,35 +11,46 @@ public class AngryState : State
     //public bool targetOutOfRange = false;
 
     public int randomTarget;
-    WeightedPriority runMethod;
+    public GameObject generator;
+    public WeightedPriority runMethod;
 
-    public bool oneTarget;
+    public bool oneTarget= true;
     public GameObject target;
 
     public AudioSource cry;
 
-    
+    bool flag = true;
 
     public override State RunCurrentState()
     {
-        //Debug.Log("Palkia is angry.");
+
+        if (flag)
+        {
+            Debug.Log("Palkia is angry.");
+            flag = false;
+        }
         // Stop turning randomly
         // Roar
         cry = GetComponent<AudioSource>();
         cry.Play();
+        Debug.Log("Angry 1");
 
         // Find aggressor using weighted prio system
 
         // Call weighted prio system
-        runMethod = GameObject.FindGameObjectWithTag("Generator").GetComponent<WeightedPriority>();
-        oneTarget = true;
+        runMethod = generator.GetComponent<WeightedPriority>();
+        Debug.Log("Angry 2");
+        //oneTarget = true;
 
         // Find the target returned
         if(oneTarget)
         {
             runMethod.GenerateRandomWeight();
+            Debug.Log("Angry 3");
             randomTarget = WeightedPriority.finalValue;
+            Debug.Log("Angry 4");
             oneTarget = false;
+            Debug.Log("Angry 5");
         }
 
         //Debug.Log("randomTarget == " + randomTarget);
@@ -79,6 +90,7 @@ public class AngryState : State
 
         if (targetInRange)
         {
+            attackState.canAtack = true;
             return attackState;
         }
         else if (!targetInRange)

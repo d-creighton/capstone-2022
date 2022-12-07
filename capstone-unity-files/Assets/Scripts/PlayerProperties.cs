@@ -46,7 +46,7 @@ public class PlayerProperties : MonoBehaviour
     {
         currentHealth += potion;
         if(currentHealth > maxHealth) { currentHealth = maxHealth; }
-        
+
         healthBar.SetValue(currentHealth);
         healthBar.SetLabel(currentHealth, maxHealth);
     }

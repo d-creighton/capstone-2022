@@ -22,20 +22,20 @@ public class CompanionAttackState : State
         // Attack boss
         if(attackStrength == 1)
         {
-            Debug.Log("Torterra is weakly attacking Palkia.");
+            //Debug.Log("Torterra is weakly attacking Palkia.");
             attackPool.WeakAttack();
             attackStrength = 0;
             hasAttacked = true;
         }
         else if(attackStrength == 2)
         {
-            Debug.Log("Torterra is strongly attacking Palkia.");
+            //Debug.Log("Torterra is strongly attacking Palkia.");
             attackPool.StrongAttack();
             attackStrength = 0;
             hasAttacked = true;
         }
 
-        Debug.Log("Torterra is preparing to attack Palkia.");
+        //Debug.Log("Torterra is preparing to attack Palkia.");
         if (hasAttacked)
         {
             return idleState;

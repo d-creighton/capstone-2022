@@ -10,6 +10,8 @@ public class BossIdleState : State
 
     //AngryState selectTarget;
 
+    bool flag = true;
+
     void Start() 
     {
         // Get Rigidbody
@@ -22,8 +24,12 @@ public class BossIdleState : State
         angryState.oneTarget = true;
 
         // turn randomly
-        
-        //Debug.Log("Palkia is idle.");
+
+        if (flag)
+        {
+            Debug.Log("Palkia is idle.");
+            flag = false;
+        }        
 
         if (wasAttacked)
         {
