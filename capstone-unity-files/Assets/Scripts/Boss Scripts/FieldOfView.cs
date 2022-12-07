@@ -21,6 +21,7 @@ public class FieldOfView : MonoBehaviour
     {
         //get target from AngryState
         //targetRef = GameObject.FindGameObjectWithTag("");
+        //want to find target each time it changes
         targetRef = angryState.target;
         StartCoroutine(FOVRoutine());
     }
@@ -44,36 +45,49 @@ public class FieldOfView : MonoBehaviour
 
         if(rangeChecks.Length != 0)
         {
-        for(int i=0; i<rangeChecks.Length; i++)
-        {
-            if(rangeChecks[i] == targetRef)
+            for(int i=0; i<rangeChecks.Length; i++)
             {
-                Transform target = rangeChecks[i].transform;
-                Vector3 directionToTarget = (target.position - transform.position).normalized;
+                canSeeTarget = true;
+                targetRef = rangeChecks[i].gameObject;
+                break;
+            }
 
-                if(Vector3.Angle(transform.forward, directionToTarget) < angle / 2)
-                {
-                    float distanceToTarget = Vector3.Distance(transform.position, target.position);
 
-                    if(!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
+                
+                //if(rangeChecks[i] == targetRef)
+                //{
+                    Transform target = targetRef.transform;
+                    Vector3 directionToTarget = (target.position - transform.position).normalized;
+
+                    if(Vector3.Angle(transform.forward, directionToTarget) < angle / 2)
                     {
-                        canSeeTarget = true;
+                        float distanceToTarget = Vector3.Distance(transform.position, target.position);
+
+                        if(!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
+                        {
+                            canSeeTarget = true;
+                        }
+                        else
+                        {
+                            canSeeTarget = false;
+                        }
                     }
                     else
                     {
                         canSeeTarget = false;
                     }
-                }
-                else
+                //}
+                /*
+                else if(canSeeTarget)
                 {
                     canSeeTarget = false;
                 }
-            }
-            else if(canSeeTarget)
-            {
-                canSeeTarget = false;
-            }
+                */
+            //}
         }
+        else if(canSeeTarget)
+        {
+            canSeeTarget = false;
         }
 
         /*if(rangeChecks.length != 0)

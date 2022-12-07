@@ -49,6 +49,8 @@ MonoBehaviour:
   fov: {fileID: 8089857402276305798}
   targetInRange: 0
   randomTarget: 0
+  generator: {fileID: 0}
+  runMethod: {fileID: 0}
   oneTarget: 0
   target: {fileID: 0}
   cry: {fileID: 8089857402112918440}
@@ -160,6 +162,7 @@ GameObject:
   - component: {fileID: 8089857402276305797}
   - component: {fileID: 8089857402276305798}
   - component: {fileID: 8089857402276305799}
+  - component: {fileID: 1546558624}
   m_Layer: 0
   m_Name: Boss GameObject
   m_TagString: Enemy
@@ -208,15 +211,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5c40c2cc85ebe48af33fe5d93e3b7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 0
-  angle: 0
+  radius: 10
+  angle: 100
   targetRef: {fileID: 0}
   targetMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   obstructionMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   canSeeTarget: 0
   angryState: {fileID: 8089857402112918447}
 --- !u!114 &8089857402276305799
@@ -236,6 +239,20 @@ MonoBehaviour:
   maxHP: 200
   currentHP: 200
   healthBar: {fileID: 0}
+  CompanionPrefab: {fileID: 0}
+--- !u!65 &1546558624
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8089857402276305851}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.5, y: 11, z: 6.5}
+  m_Center: {x: -0.068154335, y: 4.9158854, z: 0.07665062}
 --- !u!1 &8089857402378079545
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,7 +309,6 @@ GameObject:
   - component: {fileID: 8089857402658267920}
   - component: {fileID: 8089857402658267923}
   - component: {fileID: 8089857402658267922}
-  - component: {fileID: 8089857402658267921}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -363,19 +379,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8089857402658267921
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8089857402658267927}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8089857403023965164
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,7 +469,6 @@ GameObject:
   - component: {fileID: 8089857403972484789}
   - component: {fileID: 8089857403972484784}
   - component: {fileID: 8089857403972484791}
-  - component: {fileID: 8089857403972484790}
   m_Layer: 0
   m_Name: Boss Model
   m_TagString: Untagged
@@ -538,19 +540,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8089857403972484790
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8089857403972484788}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8089857404112297175
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,7 +585,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angryState: {fileID: 8089857402112918447}
+  bossAttack: {fileID: 8089857404112297170}
   hasAttacked: 0
+  canAtack: 1
+  targetToAttack: {fileID: 0}
 --- !u!114 &8089857404112297170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -612,3 +604,4 @@ MonoBehaviour:
   attackChoice: {fileID: 0}
   giveCommand: {fileID: 0}
   targetRef: {fileID: 0}
+  targetRefProp: {fileID: 0}
