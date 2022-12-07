@@ -47,9 +47,13 @@ public class FieldOfView : MonoBehaviour
         {
             for(int i=0; i<rangeChecks.Length; i++)
             {
-                canSeeTarget = true;
-                targetRef = rangeChecks[i].gameObject;
-                break;
+                if(rangeChecks[i] == targetRef)
+                {
+                    canSeeTarget = true;
+                    targetRef = rangeChecks[i].gameObject;
+                    break;
+                }
+
             }
 
 

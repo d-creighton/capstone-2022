@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 5596782208734282880}
   - component: {fileID: 5596782208734282887}
   - component: {fileID: 5596782208734282886}
-  - component: {fileID: 5596782208734282881}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,19 +81,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5596782208734282881
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5596782208734282883}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5596782209131788481
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,7 +93,8 @@ GameObject:
   - component: {fileID: 5596782209131788486}
   - component: {fileID: 5596782209131788484}
   - component: {fileID: 5596782209131788485}
-  m_Layer: 0
+  - component: {fileID: 1816908757}
+  m_Layer: 6
   m_Name: Companion GameObject
   m_TagString: Friendly
   m_Icon: {fileID: 0}
@@ -160,6 +147,7 @@ MonoBehaviour:
   maxHP: 100
   currentHP: 100
   healthBar: {fileID: 0}
+  CompanionPrefab: {fileID: 0}
 --- !u!82 &5596782209131788485
 AudioSource:
   m_ObjectHideFlags: 0
@@ -256,6 +244,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &1816908757
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5596782209131788481}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.5, y: 2, z: 4.5}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &5596782209146078569
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,7 +266,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5596782209146078574}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: States
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,7 +302,7 @@ GameObject:
   - component: {fileID: 5596782209333265331}
   - component: {fileID: 5596782209333265329}
   - component: {fileID: 5596782209333265334}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Attack State
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -354,6 +355,7 @@ MonoBehaviour:
   attackChoice: {fileID: 5596782209333265331}
   giveCommand: {fileID: 5596782209805988654}
   targetRef: {fileID: 0}
+  targetRefProp: {fileID: 0}
 --- !u!82 &5596782209333265334
 AudioSource:
   m_ObjectHideFlags: 0
@@ -461,8 +463,7 @@ GameObject:
   - component: {fileID: 5596782209487826835}
   - component: {fileID: 5596782209487826838}
   - component: {fileID: 5596782209487826833}
-  - component: {fileID: 5596782209487826832}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Companion Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -533,19 +534,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5596782209487826832
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5596782209487826834}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5596782209805988648
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,7 +545,7 @@ GameObject:
   - component: {fileID: 5596782209805988649}
   - component: {fileID: 5596782209805988654}
   - component: {fileID: 5596782209805988655}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Idle State
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -699,7 +687,7 @@ GameObject:
   - component: {fileID: 5596782210082488770}
   - component: {fileID: 5596782210082488781}
   - component: {fileID: 5596782210082488771}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Seeking State
   m_TagString: Untagged
   m_Icon: {fileID: 0}
