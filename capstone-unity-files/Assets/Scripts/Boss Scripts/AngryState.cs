@@ -59,6 +59,7 @@ public class AngryState : State
             //target is companion
             //find companion
             target = GameObject.FindGameObjectWithTag("Friendly");
+            //fov.targetRef = target;
 
             //check if in range
             if(fov.canSeeTarget)
@@ -75,6 +76,7 @@ public class AngryState : State
             //target is player
             //find player
             target = GameObject.FindGameObjectWithTag("Player");
+            //fov.targetRef = target;
 
             //check if in range
             if(fov.canSeeTarget)

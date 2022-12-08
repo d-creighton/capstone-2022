@@ -13,6 +13,7 @@ public class Properties : MonoBehaviour
     public BarFunctionality healthBar;
 
     public GameObject CompanionPrefab;
+    public BossIdleState bossIdleState;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,8 @@ public class Properties : MonoBehaviour
     // Call if projectile hits
     public bool TakeDamage(int damageTaken)
     {
+        bossIdleState.wasAttacked = true;
+
         // Take damage
         currentHP -= damageTaken;
         healthBar.SetValue(currentHP);
