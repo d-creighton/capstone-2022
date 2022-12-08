@@ -16,7 +16,7 @@ public class FieldOfView : MonoBehaviour
     public bool canSeeTarget;
 
     public AngryState angryState;
-    public State state;
+    public StateManager stateManager;
 
     private void Start()
     {
@@ -31,13 +31,11 @@ public class FieldOfView : MonoBehaviour
     {
         float delay = 0.2f;
         WaitForSeconds wait = new WaitForSeconds(delay);
-        //Debug.Log(angryState.targetLock);
+
         while (true)
         {
-            Debug.Log("searching");
-            if (angryState.targetLock)
+            if(stateManager.currentState == angryState)
             {
-                Debug.Log("calling");
                 yield return wait;
                 targetRef = angryState.target;
                 FieldOfViewCheck();

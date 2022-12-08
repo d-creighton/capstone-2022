@@ -8,7 +8,7 @@ public class AngryState : State
     public AttackState attackState;
     public FieldOfView fov;
     public bool targetInRange;
-    public bool targetLock = false;
+    //public bool targetOutOfRange = false;
 
     public int randomTarget;
     public GameObject generator;
@@ -31,7 +31,6 @@ public class AngryState : State
         }
         // Stop turning randomly
         // Roar
-        //StartCoroutine(AttackDelay());
         cry = GetComponent<AudioSource>();
         cry.Play();
         //Debug.Log("Angry 1");
@@ -61,20 +60,17 @@ public class AngryState : State
             //find companion
             Debug.Log("target AI set in angry");
             target = GameObject.FindGameObjectWithTag("Friendly");
-            targetLock = true;
 
             //check if in range
             Debug.Log("checking if in range");
             if(fov.canSeeTarget)
             {
                 Debug.Log("true");
-                targetLock = false;
                 targetInRange = true;
             }
             else
             {
                 Debug.Log("false");
-                targetLock = false;
                 targetInRange = false;
             }
         }
@@ -84,20 +80,17 @@ public class AngryState : State
             //find player
             Debug.Log("target player set in angry");
             target = GameObject.FindGameObjectWithTag("Player");
-            targetLock = true;
 
             //check if in range
             Debug.Log("checking if in range");
             if(fov.canSeeTarget)
             {
                 Debug.Log("true");
-                targetLock = false;
                 targetInRange = true;
             }
             else
             {
                 Debug.Log("false");
-                targetLock = false;
                 targetInRange = false;
             }
         }
@@ -117,9 +110,4 @@ public class AngryState : State
             return this;
         }
     }
-
-/*     private IEnumerator AttackDelay()
-    {
-        yield return new WaitForSeconds(10);
-    } */
 }

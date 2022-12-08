@@ -17,7 +17,6 @@ public class AttackState : State
 
     public override State RunCurrentState()
     {
-        
         angryState.oneTarget = true;
 
         if (flag)
@@ -29,27 +28,19 @@ public class AttackState : State
         // Attack the chosen target
         if (canAtack)
         {
-            hasAttacked = false;
             targetToAttack = angryState.target;
             //Debug.Log("1");
             bossAttack.targetRef = targetToAttack;
             //Debug.Log("2");
             bossAttack.WeakAttack();
-
-            
             //Debug.Log("3");
             canAtack = false;
             //Debug.Log("4");
         }
 
         // set hasAttacked to true after attack
-        //Debug.Log("1");
-        //StartCoroutine(AttackDelay());
-        
-        
-        //Debug.Log("4");
-
         hasAttacked = true;
+        //Debug.Log("5");
 
         if (hasAttacked)
         {
@@ -60,12 +51,4 @@ public class AttackState : State
             return this;
         }
     }
-
-/*     private IEnumerator AttackDelay()
-    {
-        Debug.Log("2");
-        yield return new WaitForSeconds(10);
-        Debug.Log("3");
-        hasAttacked = true;
-    } */
 }
