@@ -15,7 +15,7 @@ public class AngryState : State
     public WeightedPriority runMethod;
 
     public bool oneTarget= true;
-    public GameObject target;
+    public GameObject target = null;
 
     public AudioSource cry;
 
@@ -32,25 +32,25 @@ public class AngryState : State
         // Stop turning randomly
         // Roar
         cry = GetComponent<AudioSource>();
-        cry.Play();
-        Debug.Log("Angry 1");
+        //cry.Play();
+        //Debug.Log("Angry 1");
 
         // Find aggressor using weighted prio system
 
         // Call weighted prio system
         runMethod = generator.GetComponent<WeightedPriority>();
-        Debug.Log("Angry 2");
+        //Debug.Log("Angry 2");
         //oneTarget = true;
 
         // Find the target returned
         if(oneTarget)
         {
             runMethod.GenerateRandomWeight();
-            Debug.Log("Angry 3");
+            //Debug.Log("Angry 3");
             randomTarget = WeightedPriority.finalValue;
-            Debug.Log("Angry 4");
+            //Debug.Log("Angry 4");
             oneTarget = false;
-            Debug.Log("Angry 5");
+            //Debug.Log("Angry 5");
         }
 
         //Debug.Log("randomTarget == " + randomTarget);
@@ -59,36 +59,37 @@ public class AngryState : State
             //target is companion
             //find companion
             target = GameObject.FindGameObjectWithTag("Friendly");
-            //fov.targetRef = target;
+            fov.targetRef = target;
 
             //check if in range
-            if(fov.canSeeTarget)
+/*             if(fov.canSeeTarget)
             {
                 targetInRange = true;
             }
             else
             {
                 targetInRange = false;
-            }
+            } */
         }
         else
         {
             //target is player
             //find player
             target = GameObject.FindGameObjectWithTag("Player");
-            //fov.targetRef = target;
+            fov.targetRef = target;
 
             //check if in range
-            if(fov.canSeeTarget)
+/*             if(fov.canSeeTarget)
             {
                 targetInRange = true;
             }
             else
             {
                 targetInRange = false;
-            }
+            } */
         }
 
+        Debug.Log(targetInRange);
 
         if (targetInRange)
         {

@@ -1844,7 +1844,7 @@ Transform:
   - {fileID: 1366985191}
   - {fileID: 2017537568}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &785623808
 MonoBehaviour:
@@ -2256,7 +2256,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.117014244, y: -0.000000017100044, z: 0.00000000201196, w: 0.99313027}
+  m_LocalRotation: {x: 0.117014244, y: 0.000000017100042, z: -0.00000000201196, w: 0.99313027}
   m_LocalPosition: {x: 0, y: 6.74, z: -13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -3249,7 +3249,7 @@ RectTransform:
   - {fileID: 1210433865}
   - {fileID: 391640535}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3713,7 +3713,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1366985189}
-  m_LocalRotation: {x: 0.11701424, y: -0.00000001708818, z: 0.000000002013392, w: 0.99313027}
+  m_LocalRotation: {x: 0.11701424, y: 0.000000017088176, z: -0.0000000020133915, w: 0.99313027}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6210,7 +6210,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1546558623 stripped
 GameObject:
@@ -6364,7 +6364,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4828767924422817088, guid: be985b6b76de8b14b9d5e2a242c2e68d, type: 3}
   m_PrefabInstance: {fileID: 5172320005388117780}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5172320005388117781}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14fb34df206048940a54edaccb9cd1ed, type: 3}
@@ -7906,7 +7906,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1989969165}
-  m_LocalRotation: {x: 0.13505942, y: 8.719026e-16, z: -1.7869098e-17, w: 0.9908375}
+  m_LocalRotation: {x: 0.1350594, y: -0.00000001476463, z: 0.0000000020125421, w: 0.9908375}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -8188,7 +8188,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2017537566}
-  m_LocalRotation: {x: 0.09897817, y: 0.000000008560947, z: -8.5152807e-10, w: 0.99508965}
+  m_LocalRotation: {x: 0.09897817, y: -0.000000008560945, z: 8.515279e-10, w: 0.99508965}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -8442,7 +8442,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5172320006692821959, guid: be985b6b76de8b14b9d5e2a242c2e68d, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5172320006692821959, guid: be985b6b76de8b14b9d5e2a242c2e68d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8486,11 +8486,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be985b6b76de8b14b9d5e2a242c2e68d, type: 3}
---- !u!1 &5172320005388117781 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5172320006692821958, guid: be985b6b76de8b14b9d5e2a242c2e68d, type: 3}
-  m_PrefabInstance: {fileID: 5172320005388117780}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5596782210234949578
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8634,7 +8629,7 @@ PrefabInstance:
     - target: {fileID: 8089857402276305798, guid: ef4801925f108264184e8828670fa645, type: 3}
       propertyPath: targetRef
       value: 
-      objectReference: {fileID: 5172320005388117781}
+      objectReference: {fileID: 0}
     - target: {fileID: 8089857402276305799, guid: ef4801925f108264184e8828670fa645, type: 3}
       propertyPath: healthBar
       value: 
