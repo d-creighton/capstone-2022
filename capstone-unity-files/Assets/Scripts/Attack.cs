@@ -30,6 +30,7 @@ public class Attack : MonoBehaviour
             if (targetRef.CompareTag("Enemy"))
             {
                 //win game
+                Destroy(targetRef);
             }
             //if player dies end game
             else if (targetRef.CompareTag("Player"))

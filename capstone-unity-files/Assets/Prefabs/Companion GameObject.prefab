@@ -148,6 +148,7 @@ MonoBehaviour:
   currentHP: 100
   healthBar: {fileID: 0}
   CompanionPrefab: {fileID: 0}
+  idleState: {fileID: 0}
 --- !u!82 &5596782209131788485
 AudioSource:
   m_ObjectHideFlags: 0
