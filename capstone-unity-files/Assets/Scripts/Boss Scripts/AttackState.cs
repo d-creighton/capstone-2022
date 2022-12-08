@@ -9,7 +9,7 @@ public class AttackState : State
     public Attack bossAttack;
     public bool hasAttacked = false;
 
-    public bool canAtack;
+    public bool canAttack;
 
     public GameObject targetToAttack;
 
@@ -27,17 +27,17 @@ public class AttackState : State
         
         if (!attackDelay.initiateDelay)
         {
-            canAtack = true;
+            canAttack = true;
         } 
         
         // Attack the chosen target
-        if (canAtack)
+        if (canAttack)
         {
             targetToAttack = angryState.target;
             bossAttack.targetRef = targetToAttack;
             bossAttack.WeakAttack();
             hasAttacked = true;
-            canAtack = false;
+            canAttack = false;
         }
 
         if (hasAttacked)

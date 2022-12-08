@@ -75,7 +75,7 @@ public class AngryState : State
         {
             if (targetInRange)
             {
-                attackState.canDelay = true;
+                attackState.canAttack = true;
                 return attackState;
             }
             else //if (!targetInRange)
