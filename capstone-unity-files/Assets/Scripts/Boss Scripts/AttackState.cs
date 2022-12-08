@@ -29,18 +29,18 @@ public class AttackState : State
         if (canAtack)
         {
             targetToAttack = angryState.target;
-            Debug.Log("1");
+            //Debug.Log("1");
             bossAttack.targetRef = targetToAttack;
-            Debug.Log("2");
+            //Debug.Log("2");
             bossAttack.WeakAttack();
-            Debug.Log("3");
+            //Debug.Log("3");
             canAtack = false;
-            Debug.Log("4");
+            //Debug.Log("4");
         }
 
         // set hasAttacked to true after attack
         hasAttacked = true;
-        Debug.Log("5");
+        //Debug.Log("5");
 
         if (hasAttacked)
         {

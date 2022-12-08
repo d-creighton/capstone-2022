@@ -16,13 +16,14 @@ public class FieldOfView : MonoBehaviour
     public bool canSeeTarget;
 
     public AngryState angryState;
+    public StateManager stateManager;
 
     private void Start()
     {
         //get target from AngryState
         //targetRef = GameObject.FindGameObjectWithTag("");
         //want to find target each time it changes
-        targetRef = angryState.target;
+        //targetRef = angryState.target;
         StartCoroutine(FOVRoutine());
     }
 
@@ -33,8 +34,12 @@ public class FieldOfView : MonoBehaviour
 
         while (true)
         {
-            yield return wait;
-            FieldOfViewCheck();
+            if(stateManager.currentState == angryState)
+            {
+                yield return wait;
+                targetRef = angryState.target;
+                FieldOfViewCheck();
+            }
         }
     }
 

@@ -7,6 +7,8 @@ public class SpinState : State
     public AttackState attackState;
     public bool targetFound = false;
 
+    //public FieldOfView fov;
+
     bool flag = true;
 
     public override State RunCurrentState()
@@ -20,6 +22,11 @@ public class SpinState : State
         
         // Face target found in AngryState
         // turn to that target until FieldOfView.canSeeTarget == true
+        //if (fov.canSeeTarget)
+        //{
+        //    targetFound = true;
+        //}
+
 
         if (targetFound)
         {
