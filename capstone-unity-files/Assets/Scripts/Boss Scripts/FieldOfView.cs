@@ -34,6 +34,7 @@ public class FieldOfView : MonoBehaviour
         while (true)
         {
             yield return wait;
+            //targetRef = angryState.target;
             FieldOfViewCheck();
         }
     }
@@ -47,52 +48,38 @@ public class FieldOfView : MonoBehaviour
         {
             for(int i=0; i<rangeChecks.Length; i++)
             {
-                canSeeTarget = true;
-                targetRef = rangeChecks[i].gameObject;
-                break;
+                if(rangeChecks[i] == targetRef)
+                {
+                    canSeeTarget = true;
+                    targetRef = rangeChecks[i].gameObject;
+                    break;
+                }
             }
 
+            Transform target = targetRef.transform;
+            Vector3 directionToTarget = (target.position - transform.position).normalized;
 
-                
-                //if(rangeChecks[i] == targetRef)
-                //{
-                    Transform target = targetRef.transform;
-                    Vector3 directionToTarget = (target.position - transform.position).normalized;
+            if(Vector3.Angle(transform.forward, directionToTarget) < angle / 2)
+            {
+                float distanceToTarget = Vector3.Distance(transform.position, target.position);
 
-                    if(Vector3.Angle(transform.forward, directionToTarget) < angle / 2)
-                    {
-                        float distanceToTarget = Vector3.Distance(transform.position, target.position);
-
-                        if(!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
-                        {
-                            canSeeTarget = true;
-                        }
-                        else
-                        {
-                            canSeeTarget = false;
-                        }
-                    }
-                    else
-                    {
-                        canSeeTarget = false;
-                    }
-                //}
-                /*
-                else if(canSeeTarget)
+                if(!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
+                {
+                    canSeeTarget = true;
+                }
+                else
                 {
                     canSeeTarget = false;
                 }
-                */
-            //}
+            }
+            else
+            {
+                canSeeTarget = false;
+            }
         }
         else if(canSeeTarget)
         {
             canSeeTarget = false;
         }
-
-        /*if(rangeChecks.length != 0)
-        {
-            Transform target = rangeChecks[0].transform;
-        }*/
     }
 }
