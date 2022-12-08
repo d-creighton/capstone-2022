@@ -78,7 +78,7 @@ public class FieldOfView : MonoBehaviour
 
                     if(!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
                     {
-                        Debug.Log("if !Physics");
+                        //Debug.Log("if !Physics");
                         canSeeTarget = true;
                         angryState.targetInRange = true;
                     }

@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class AttackState : State
 {
+    public AttackDelay attackDelay;
     public AngryState angryState;
     public Attack bossAttack;
     public bool hasAttacked = false;
 
-    public bool canAtack = true;
+    public bool canAtack;
 
-    //public GameObject targetToAttack = angryState.target;
     public GameObject targetToAttack;
 
     bool flag = true;
@@ -25,22 +25,20 @@ public class AttackState : State
             flag = false;
         }
         
+        if (!attackDelay.initiateDelay)
+        {
+            canAtack = true;
+        } 
+        
         // Attack the chosen target
         if (canAtack)
         {
             targetToAttack = angryState.target;
-            Debug.Log("1");
             bossAttack.targetRef = targetToAttack;
-            Debug.Log("2");
             bossAttack.WeakAttack();
-            Debug.Log("3");
+            hasAttacked = true;
             canAtack = false;
-            Debug.Log("4");
         }
-
-        // set hasAttacked to true after attack
-        hasAttacked = true;
-        Debug.Log("5");
 
         if (hasAttacked)
         {

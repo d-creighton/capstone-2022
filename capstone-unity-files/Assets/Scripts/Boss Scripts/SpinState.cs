@@ -24,7 +24,7 @@ public class SpinState : State
         if (targetFound)
         {
             targetFound = false;
-            attackState.canAtack = true;
+            attackState.canDelay = true;
             return attackState;
         }
         else

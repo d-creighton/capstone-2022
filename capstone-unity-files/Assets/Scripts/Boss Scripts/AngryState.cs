@@ -8,7 +8,6 @@ public class AngryState : State
     public AttackState attackState;
     public FieldOfView fov;
     public bool targetInRange;
-    //public bool targetOutOfRange = false;
 
     public int randomTarget;
     public GameObject generator;
@@ -20,10 +19,11 @@ public class AngryState : State
     public AudioSource cry;
 
     bool flag = true;
+    public bool delayCheck;
 
     public override State RunCurrentState()
     {
-
+        //delayCheck = false;
         if (flag)
         {
             Debug.Log("Palkia is angry.");
@@ -32,73 +32,56 @@ public class AngryState : State
         // Stop turning randomly
         // Roar
         cry = GetComponent<AudioSource>();
-        //cry.Play();
+        cry.Play();
         //Debug.Log("Angry 1");
 
         // Find aggressor using weighted prio system
 
         // Call weighted prio system
         runMethod = generator.GetComponent<WeightedPriority>();
-        //Debug.Log("Angry 2");
-        //oneTarget = true;
 
         // Find the target returned
         if(oneTarget)
         {
             runMethod.GenerateRandomWeight();
-            //Debug.Log("Angry 3");
             randomTarget = WeightedPriority.finalValue;
-            //Debug.Log("Angry 4");
+
+            if(randomTarget==2)
+            {
+                //target is companion
+                //find companion
+                target = GameObject.FindGameObjectWithTag("Friendly");
+                //check if AI is still alive
+                if (target == null)
+                {
+                    target = GameObject.FindGameObjectWithTag("Player");
+                }
+                fov.targetRef = target;
+
+            }
+            else
+            {
+                //target is player
+                //find player
+                target = GameObject.FindGameObjectWithTag("Player");
+                fov.targetRef = target;
+
+            }
+
             oneTarget = false;
-            //Debug.Log("Angry 5");
         }
 
-        //Debug.Log("randomTarget == " + randomTarget);
-        if(randomTarget==2)
+        if (!attackDelay.initiateDelay)
         {
-            //target is companion
-            //find companion
-            target = GameObject.FindGameObjectWithTag("Friendly");
-            fov.targetRef = target;
-
-            //check if in range
-/*             if(fov.canSeeTarget)
+            if (targetInRange)
             {
-                targetInRange = true;
+                attackState.canDelay = true;
+                return attackState;
             }
-            else
+            else //if (!targetInRange)
             {
-                targetInRange = false;
-            } */
-        }
-        else
-        {
-            //target is player
-            //find player
-            target = GameObject.FindGameObjectWithTag("Player");
-            fov.targetRef = target;
-
-            //check if in range
-/*             if(fov.canSeeTarget)
-            {
-                targetInRange = true;
+                return spinState;
             }
-            else
-            {
-                targetInRange = false;
-            } */
-        }
-
-        Debug.Log(targetInRange);
-
-        if (targetInRange)
-        {
-            attackState.canAtack = true;
-            return attackState;
-        }
-        else if (!targetInRange)
-        {
-            return spinState;
         }
         else
         {

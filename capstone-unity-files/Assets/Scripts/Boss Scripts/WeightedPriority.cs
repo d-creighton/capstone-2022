@@ -41,13 +41,13 @@ public class WeightedPriority : MonoBehaviour
                 
                 if(weight==80)
                 {
-                    Debug.Log("Targetting AI");
+                    //Debug.Log("Targetting AI");
                     finalValue = 2;
                     return;
                 }
                 else
                 {
-                    Debug.Log("Targetting player");
+                    //Debug.Log("Targetting player");
                     finalValue = 1;
                     return;
                 }
