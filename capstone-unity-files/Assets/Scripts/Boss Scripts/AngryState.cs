@@ -85,10 +85,10 @@ public class AngryState : State
         //Debug.Log(delayCheck);
         if (delayCheck)
         {
+            delayCheck = false;
             if (targetInRange)
             {
                 attackState.canDelay = true;
-                attackState.hasAttacked = false;
                 return attackState;
             }
             else //if (!targetInRange)
@@ -104,7 +104,7 @@ public class AngryState : State
 
     private IEnumerator DelayCoroutine()
     {
-        float delay = 3.0f;
+        float delay = 5.0f;
         WaitForSeconds wait = new WaitForSeconds(delay);
 
         //while (true)

@@ -50,8 +50,8 @@ public class AttackState : State
 
         if (hasAttacked)
         {
+            hasAttacked = false;
             angryState.oneTarget = true;
-            angryState.delayCheck = false;
             return angryState;
         }
         else
@@ -62,7 +62,7 @@ public class AttackState : State
 
     private IEnumerator DelayCoroutine()
     {
-        float delay = 6.0f;
+        float delay = 1.0f;
         WaitForSeconds wait = new WaitForSeconds(delay);
 
         //while (true)

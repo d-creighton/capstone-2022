@@ -26,16 +26,20 @@ public class SpinState : State
         // Face target found in AngryState
         //targetToAim = angryState.target;
         // turn to that target until FieldOfView.canSeeTarget == true
-        while (!fov.canSeeTarget)
+        //if (!fov.canSeeTarget)
+        //{
+            lookAt.LookAtTarget(fov.targetRef);
+            //targetFound = true;
+        //}
+        /* if (fov.canSeeTarget)
         {
-            lookAt.LookAtTarget();
-        }
+            targetFound = true;
+        } */
 
         if (targetFound)
         {
             targetFound = false;
             attackState.canDelay = true;
-            attackState.hasAttacked = false;
             return attackState;
         }
         else

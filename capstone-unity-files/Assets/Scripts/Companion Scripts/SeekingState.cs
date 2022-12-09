@@ -7,13 +7,13 @@ public class SeekingState : State
     public CompanionAttackState atackState;
     public bool bossFound;
 
-    //public GameObject boss;
+    public GameObject boss;
     public LookAt faceBoss;
 
     public override State RunCurrentState()
     {
         // Locate boss
-        //boss = GameObject.FindWithTag("Enemy");
+        boss = GameObject.FindWithTag("Enemy");
         //if (boss == null) return;
 
         //Rigidbody bossRigidbody = boss.GetComponent<Rigidbody>();
@@ -21,6 +21,7 @@ public class SeekingState : State
 
         // Face in direction of boss
         //bossFound = faceBoss.LookAtTarget();
+        faceBoss.LookAtTarget(boss);
 
         //bossFound = true;
 
