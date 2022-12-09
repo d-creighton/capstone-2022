@@ -161,6 +161,7 @@ MonoBehaviour:
   currentHP: 100
   healthBar: {fileID: 0}
   CompanionPrefab: {fileID: 0}
+  bossIdleState: {fileID: 0}
 --- !u!82 &5596782209131788485
 AudioSource:
   m_ObjectHideFlags: 0
@@ -304,7 +305,7 @@ GameObject:
   - component: {fileID: 5596782209333265334}
   m_Layer: 6
   m_Name: Attack State
-  m_TagString: Untagged
+  m_TagString: AI Attack State
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -356,6 +357,8 @@ MonoBehaviour:
   giveCommand: {fileID: 5596782209805988654}
   targetRef: {fileID: 0}
   targetRefProp: {fileID: 0}
+  rootObject: {fileID: 0}
+  rootTransform: {fileID: 0}
 --- !u!82 &5596782209333265334
 AudioSource:
   m_ObjectHideFlags: 0
@@ -561,7 +564,7 @@ GameObject:
   - component: {fileID: 5596782209805988655}
   m_Layer: 6
   m_Name: Idle State
-  m_TagString: Untagged
+  m_TagString: AI Idle State
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -703,7 +706,7 @@ GameObject:
   - component: {fileID: 5596782210082488771}
   m_Layer: 6
   m_Name: Seeking State
-  m_TagString: Untagged
+  m_TagString: AI Seeking State
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -736,6 +739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atackState: {fileID: 5596782209333265331}
   bossFound: 0
+  boss: {fileID: 0}
   faceBoss: {fileID: 5596782210082488771}
 --- !u!114 &5596782210082488771
 MonoBehaviour:
@@ -749,4 +753,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 601c0e7acc4095d4f9022adb72a73d44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boss: {fileID: 0}
+  speed: 2
+  rootObject: {fileID: 0}
+  rootTransform: {fileID: 0}
+  fov: {fileID: 0}
+  spinState: {fileID: 0}
+  seekingState: {fileID: 0}

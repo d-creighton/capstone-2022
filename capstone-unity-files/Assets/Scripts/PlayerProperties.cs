@@ -14,7 +14,7 @@ public class PlayerProperties : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthBar.SetMaxSliderValue(maxHealth);
-        healthBar.SetLabel(currentHealth, maxHealth);
+        //healthBar.SetLabel(currentHealth, maxHealth);
     }
 
     // Update is called once per frame
@@ -27,13 +27,13 @@ public class PlayerProperties : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetValue(currentHealth);
-        healthBar.SetLabel(currentHealth, maxHealth);
+        //healthBar.SetLabel(currentHealth, maxHealth);
 
         if(currentHealth <= 0)
         {
             currentHealth = 0;
             healthBar.SetValue(currentHealth);
-            healthBar.SetLabel(currentHealth, maxHealth);
+            //healthBar.SetLabel(currentHealth, maxHealth);
             return true;
         }
         else
@@ -48,6 +48,6 @@ public class PlayerProperties : MonoBehaviour
         if(currentHealth > maxHealth) { currentHealth = maxHealth; }
 
         healthBar.SetValue(currentHealth);
-        healthBar.SetLabel(currentHealth, maxHealth);
+        //healthBar.SetLabel(currentHealth, maxHealth);
     }
 }

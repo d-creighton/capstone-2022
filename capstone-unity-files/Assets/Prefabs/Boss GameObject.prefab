@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 8089857402112918441}
   - component: {fileID: 8089857402112918447}
   - component: {fileID: 8089857402112918440}
+  - component: {fileID: 694203207}
   m_Layer: 0
   m_Name: Angry State
-  m_TagString: Untagged
+  m_TagString: Boss Angry State
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,6 +55,7 @@ MonoBehaviour:
   oneTarget: 0
   target: {fileID: 0}
   cry: {fileID: 8089857402112918440}
+  delayCheck: 0
 --- !u!82 &8089857402112918440
 AudioSource:
   m_ObjectHideFlags: 0
@@ -150,6 +152,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &694203207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8089857402112918446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7f4f0ab6ac2e947ac81b79f8a1926a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  secondsToWait: 5
+  secondsSinceLast: 0
+  initiateDelay: 0
+  attackState: {fileID: 0}
+  angryState: {fileID: 8089857402112918447}
 --- !u!1 &8089857402276305851
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,8 +230,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5c40c2cc85ebe48af33fe5d93e3b7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 10
-  angle: 100
+  radius: 70
+  angle: 25
   targetRef: {fileID: 0}
   targetMask:
     serializedVersion: 2
@@ -240,6 +259,7 @@ MonoBehaviour:
   currentHP: 200
   healthBar: {fileID: 0}
   CompanionPrefab: {fileID: 0}
+  bossIdleState: {fileID: 8089857403217485438}
 --- !u!65 &1546558624
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -263,9 +283,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8089857402378079546}
   - component: {fileID: 8089857402378079547}
+  - component: {fileID: 1497192201}
   m_Layer: 0
   m_Name: Spin State
-  m_TagString: Untagged
+  m_TagString: Boss Spin State
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -297,7 +318,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackState: {fileID: 8089857404112297168}
+  angryState: {fileID: 8089857402112918447}
+  lookAt: {fileID: 1497192201}
   targetFound: 0
+  targetToAim: {fileID: 0}
+  fov: {fileID: 8089857402276305798}
+--- !u!114 &1497192201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8089857402378079545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 601c0e7acc4095d4f9022adb72a73d44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  rootObject: {fileID: 0}
+  rootTransform: {fileID: 0}
+  fov: {fileID: 0}
+  spinState: {fileID: 0}
+  seekingState: {fileID: 0}
 --- !u!1 &8089857402658267927
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,7 +468,7 @@ GameObject:
   - component: {fileID: 8089857403217485438}
   m_Layer: 0
   m_Name: Idle State
-  m_TagString: Untagged
+  m_TagString: Boss Idle State
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -484,7 +527,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8089857403972484788}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.15, z: 0}
+  m_LocalPosition: {x: 0, y: 3.78, z: 0}
   m_LocalScale: {x: 5, y: 10, z: 5}
   m_Children:
   - {fileID: 8089857402658267920}
@@ -551,9 +594,10 @@ GameObject:
   - component: {fileID: 8089857404112297169}
   - component: {fileID: 8089857404112297168}
   - component: {fileID: 8089857404112297170}
+  - component: {fileID: 712005191}
   m_Layer: 0
   m_Name: Attack State
-  m_TagString: Untagged
+  m_TagString: Boss Attack State
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -584,11 +628,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b12266533229ac340a84f7aa681dd5e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackDelay: {fileID: 712005191}
   angryState: {fileID: 8089857402112918447}
   bossAttack: {fileID: 8089857404112297170}
   hasAttacked: 0
-  canAtack: 1
+  canAttack: 0
   targetToAttack: {fileID: 0}
+  canDelay: 0
 --- !u!114 &8089857404112297170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -605,3 +651,22 @@ MonoBehaviour:
   giveCommand: {fileID: 0}
   targetRef: {fileID: 0}
   targetRefProp: {fileID: 0}
+  rootObject: {fileID: 0}
+  rootTransform: {fileID: 0}
+--- !u!114 &712005191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8089857404112297175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7f4f0ab6ac2e947ac81b79f8a1926a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  secondsToWait: 5
+  secondsSinceLast: 0
+  initiateDelay: 0
+  attackState: {fileID: 8089857404112297168}
+  angryState: {fileID: 0}

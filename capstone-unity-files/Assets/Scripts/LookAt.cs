@@ -8,7 +8,8 @@ public class LookAt : MonoBehaviour
     //public bool hasTurned = false;
     public float speed = 0.25f;
 
-    public Transform thisObjectsTransform;
+    public GameObject rootObject;
+    public Transform rootTransform;
     public FieldOfView fov;
 
     public SpinState spinState;
@@ -17,13 +18,19 @@ public class LookAt : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
+        rootTransform = this.transform.root;
+        rootObject = rootTransform.gameObject;
+        //rootTransform = rootObject.GetComponent<Transform>();
 
-    // Update is called once per frame
-    void Update()
-    {
-
+        if (rootObject.CompareTag("Friendly"))
+        {
+            seekingState = GameObject.FindWithTag("AI Seeking State").GetComponent<SeekingState>();
+        }
+        else if (rootObject.CompareTag("Enemy"))
+        {
+            fov = rootObject.GetComponent<FieldOfView>();
+            spinState = GameObject.FindWithTag("Boss Spin State").GetComponent<SpinState>();
+        }
     }
 
     public void LookAtTarget(GameObject target)
@@ -31,10 +38,10 @@ public class LookAt : MonoBehaviour
         //GameObject target = fov.targetRef;
         Transform targetTransform = target.GetComponent<Transform>();
 
-        Vector3 direction = targetTransform.position - thisObjectsTransform.position;
+        Vector3 direction = targetTransform.position - rootTransform.position;
         Quaternion rotation = Quaternion.LookRotation(direction);
         //transform.rotation = rotation;
-        thisObjectsTransform.rotation = Quaternion.Lerp(thisObjectsTransform.rotation, rotation, speed * Time.deltaTime);
+        rootTransform.rotation = Quaternion.Lerp(rootTransform.rotation, rotation, speed * Time.deltaTime);
     
         if (fov != null && fov.canSeeTarget)
         {

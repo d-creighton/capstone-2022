@@ -19,8 +19,13 @@ public class BarFunctionality : MonoBehaviour
         slider.value = value;
     }
 
-    public void SetLabel(int currentValue, int maxValue)
+    public void SetLabel(int currentValue, int maxValue, string name)
     {
-        label.text = "HP " + currentValue + "/" + maxValue;
+        label.text = name + "   " + currentValue + "/" + maxValue;
     }
+
+    /* public void SetHolder(GameObject gameObject)
+    {
+
+    } */
 }

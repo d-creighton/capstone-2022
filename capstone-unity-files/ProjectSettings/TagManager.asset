@@ -7,6 +7,17 @@ TagManager:
   - Generator
   - Enemy
   - Friendly
+  - AI Healthbar
+  - Boss Idle State
+  - Boss Angry State
+  - Boss Spin State
+  - Boss Attack State
+  - AI Idle State
+  - AI Seeking State
+  - AI Attack State
+  - Button1
+  - Button2
+  - Heal Button
   layers:
   - Default
   - TransparentFX

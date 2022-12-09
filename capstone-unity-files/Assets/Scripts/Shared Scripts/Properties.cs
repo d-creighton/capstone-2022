@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Properties : MonoBehaviour
 {
@@ -15,12 +16,33 @@ public class Properties : MonoBehaviour
     public GameObject CompanionPrefab;
     public BossIdleState bossIdleState;
 
+    public Button button;
+
     // Start is called before the first frame update
     void Start()
     {
+        //gameObject = GetComponent<tag>();
+
+        if (this.gameObject.CompareTag("Friendly"))
+        {
+            bossIdleState = GameObject.FindWithTag("Boss Idle State").GetComponent<BossIdleState>();
+            healthBar = GameObject.FindWithTag("AI Healthbar").GetComponent<BarFunctionality>();
+
+            Button[] activeAndInactive = GameObject.FindObjectsOfType<Button>(true);
+            for (int i=0; i<activeAndInactive.Length; i++)
+            {
+                if (activeAndInactive[i].CompareTag("Heal Button"))
+                {
+                    button = activeAndInactive[i];
+                    button.onClick.AddListener(() => Heal(25));
+                }
+            }
+        }
+
+
         currentHP = maxHP;
         healthBar.SetMaxSliderValue(maxHP);
-        healthBar.SetLabel(currentHP, maxHP);
+        healthBar.SetLabel(currentHP, maxHP, unitName);
     }
 
     // Call if projectile hits
@@ -31,14 +53,14 @@ public class Properties : MonoBehaviour
         // Take damage
         currentHP -= damageTaken;
         healthBar.SetValue(currentHP);
-        healthBar.SetLabel(currentHP, maxHP);
+        healthBar.SetLabel(currentHP, maxHP, unitName);
 
         // Check if this unit has died
         if(currentHP <= 0)
         {
             currentHP = 0;
             healthBar.SetValue(currentHP);
-            healthBar.SetLabel(currentHP, maxHP);
+            healthBar.SetLabel(currentHP, maxHP, unitName);
             return true;
         }
         else
@@ -49,11 +71,12 @@ public class Properties : MonoBehaviour
 
     public void Heal(int potion)
     {
+        Debug.Log("Healing: " + gameObject);
         currentHP += potion;
         if(currentHP > maxHP) { currentHP = maxHP; }
 
         healthBar.SetValue(currentHP);
-        healthBar.SetLabel(currentHP, maxHP);
+        healthBar.SetLabel(currentHP, maxHP, unitName);
     }
 
     public void Revive()

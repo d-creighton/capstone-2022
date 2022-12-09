@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Attack : MonoBehaviour
 {
@@ -9,6 +10,42 @@ public class Attack : MonoBehaviour
     public CompanionIdleState giveCommand;
     public GameObject targetRef;
     public Properties targetRefProp;
+
+    public GameObject rootObject;
+    public Transform rootTransform;
+
+    public Button button1;
+    public Button button2;
+
+    void Start()
+    {
+        rootTransform = this.transform.root;
+        rootObject = rootTransform.gameObject;
+
+        if (rootObject.CompareTag("Friendly"))
+        {
+            targetRef = GameObject.FindWithTag("Enemy");
+            targetRefProp = targetRef.GetComponent<Properties>();
+
+            attackChoice = GameObject.FindWithTag("AI Attack State").GetComponent<CompanionAttackState>();
+            giveCommand = GameObject.FindWithTag("AI Idle State").GetComponent<CompanionIdleState>();
+
+            Button[] activeAndInactive = GameObject.FindObjectsOfType<Button>(true);
+            for (int i=0; i<activeAndInactive.Length; i++)
+            {
+                if (activeAndInactive[i].CompareTag("Button1"))
+                {
+                    button1 = activeAndInactive[i];
+                    button1.onClick.AddListener(() => AttackChoice(1));
+                }
+                else if (activeAndInactive[i].CompareTag("Button2"))
+                {
+                    button2 = activeAndInactive[i];
+                    button2.onClick.AddListener(() => AttackChoice(2));
+                }
+            }
+        }
+    }
 
     public void AttackChoice(int choice)
     {
