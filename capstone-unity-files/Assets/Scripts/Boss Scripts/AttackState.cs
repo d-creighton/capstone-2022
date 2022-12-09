@@ -13,7 +13,7 @@ public class AttackState : State
 
     public GameObject targetToAttack;
 
-    bool flag = true;
+    //bool flag = true;
 
     public bool canDelay = false;
     Coroutine timeDelay;

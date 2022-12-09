@@ -20,7 +20,7 @@ public class SeekingState : State
         //Transform bossTransform = boss.GetComponent<Transform>();
 
         // Face in direction of boss
-        bossFound = faceBoss.LookAtTarget();
+        //bossFound = faceBoss.LookAtTarget();
 
         //bossFound = true;
 

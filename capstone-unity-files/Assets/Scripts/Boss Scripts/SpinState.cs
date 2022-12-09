@@ -5,7 +5,12 @@ using UnityEngine;
 public class SpinState : State
 {
     public AttackState attackState;
+    public AngryState angryState;
+    public LookAt lookAt;
     public bool targetFound = false;
+
+    public GameObject targetToAim;
+    public FieldOfView fov;
 
     bool flag = true;
 
@@ -19,7 +24,12 @@ public class SpinState : State
         }        
         
         // Face target found in AngryState
+        //targetToAim = angryState.target;
         // turn to that target until FieldOfView.canSeeTarget == true
+        while (!fov.canSeeTarget)
+        {
+            lookAt.LookAtTarget();
+        }
 
         if (targetFound)
         {

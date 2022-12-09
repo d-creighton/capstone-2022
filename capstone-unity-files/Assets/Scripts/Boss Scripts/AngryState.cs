@@ -18,7 +18,7 @@ public class AngryState : State
 
     public AudioSource cry;
 
-    bool flag = true;
+    //bool flag = true;
 
     public bool delayCheck = false;
     Coroutine timeDelay;
@@ -39,7 +39,7 @@ public class AngryState : State
         // Find aggressor using weighted prio system
 
         // Call weighted prio system
-        
+        runMethod = generator.GetComponent<WeightedPriority>();
 
         // Find the target returned
         if(oneTarget)
@@ -48,7 +48,7 @@ public class AngryState : State
             cry = GetComponent<AudioSource>();
             cry.Play();
 
-            runMethod = generator.GetComponent<WeightedPriority>();
+            
 
             runMethod.GenerateRandomWeight();
             randomTarget = WeightedPriority.finalValue;

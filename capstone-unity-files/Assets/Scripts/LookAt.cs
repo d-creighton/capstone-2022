@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class LookAt : MonoBehaviour
 {
-    public GameObject boss;
+    //public GameObject target;
     //public bool hasTurned = false;
+    public float speed = 2f;
+
+    public Transform thisObjectsTransform;
+    public FieldOfView fov;
 
     // Start is called before the first frame update
     void Start()
@@ -19,15 +23,14 @@ public class LookAt : MonoBehaviour
 
     }
 
-    public bool LookAtTarget()
+    public void LookAtTarget()
     {
-        //boss = GameObject.FindWithTag("Enemy");
-        Transform bossTransform = boss.GetComponent<Transform>();
+        GameObject target = fov.targetRef;
+        Transform targetTransform = target.GetComponent<Transform>();
 
-        Vector3 direction = bossTransform.position - transform.position;
+        Vector3 direction = targetTransform.position - thisObjectsTransform.position;
         Quaternion rotation = Quaternion.LookRotation(direction);
-        transform.rotation = rotation;
-
-        return true;
+        //transform.rotation = rotation;
+        thisObjectsTransform.rotation = Quaternion.Lerp(thisObjectsTransform.rotation, rotation, speed * Time.deltaTime);
     }
 }
