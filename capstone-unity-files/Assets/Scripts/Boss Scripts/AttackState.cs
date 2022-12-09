@@ -15,24 +15,32 @@ public class AttackState : State
 
     bool flag = true;
 
+    public bool canDelay = false;
+    Coroutine timeDelay;
+
     public override State RunCurrentState()
     {
-        angryState.oneTarget = true;
+        
 
-        if (flag)
+        /* if (flag)
         {
             Debug.Log("Palkia is attacking the target.");
             flag = false;
-        }
+        } */
         
-        if (!attackDelay.initiateDelay)
+        if (canDelay)
         {
-            canAttack = true;
+            Debug.Log("Palkia is attacking the target.");
+            Debug.Log(hasAttacked);
+            //timeDelay = Timer.DelayActionRetriggerable(this, canAttack, 3.0f, timeDelay);
+            StartCoroutine(DelayCoroutine());
+            canDelay = false;
         } 
         
         // Attack the chosen target
         if (canAttack)
         {
+            
             targetToAttack = angryState.target;
             bossAttack.targetRef = targetToAttack;
             bossAttack.WeakAttack();
@@ -42,11 +50,26 @@ public class AttackState : State
 
         if (hasAttacked)
         {
+            angryState.oneTarget = true;
+            angryState.delayCheck = false;
             return angryState;
         }
         else
         {
             return this;
         }
+    }
+
+    private IEnumerator DelayCoroutine()
+    {
+        float delay = 6.0f;
+        WaitForSeconds wait = new WaitForSeconds(delay);
+
+        //while (true)
+        //{
+            yield return wait;
+            canAttack = true;
+            //Debug.Log("attack delay");
+        //}
     }
 }

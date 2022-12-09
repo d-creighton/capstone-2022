@@ -19,30 +19,37 @@ public class AngryState : State
     public AudioSource cry;
 
     bool flag = true;
-    public bool delayCheck;
+
+    public bool delayCheck = false;
+    Coroutine timeDelay;
 
     public override State RunCurrentState()
     {
         //delayCheck = false;
-        if (flag)
+        /* if (flag)
         {
             Debug.Log("Palkia is angry.");
             flag = false;
-        }
+        } */
         // Stop turning randomly
         // Roar
-        cry = GetComponent<AudioSource>();
-        cry.Play();
+        
         //Debug.Log("Angry 1");
 
         // Find aggressor using weighted prio system
 
         // Call weighted prio system
-        runMethod = generator.GetComponent<WeightedPriority>();
+        
 
         // Find the target returned
         if(oneTarget)
         {
+            Debug.Log("Palkia is angry.");
+            cry = GetComponent<AudioSource>();
+            cry.Play();
+
+            runMethod = generator.GetComponent<WeightedPriority>();
+
             runMethod.GenerateRandomWeight();
             randomTarget = WeightedPriority.finalValue;
 
@@ -58,6 +65,8 @@ public class AngryState : State
                 }
                 fov.targetRef = target;
 
+                //timeDelay = Timer.DelayActionRetriggerable(this, delayCheck, 3.0f, timeDelay);
+                StartCoroutine(DelayCoroutine());
             }
             else
             {
@@ -66,16 +75,20 @@ public class AngryState : State
                 target = GameObject.FindGameObjectWithTag("Player");
                 fov.targetRef = target;
 
+                //timeDelay = Timer.DelayActionRetriggerable(this, delayCheck, 3.0f, timeDelay);
+                StartCoroutine(DelayCoroutine());
             }
 
             oneTarget = false;
+            //Debug.Log("oneTarget f");
         }
-
-        if (!attackDelay.initiateDelay)
+        //Debug.Log(delayCheck);
+        if (delayCheck)
         {
             if (targetInRange)
             {
-                attackState.canAttack = true;
+                attackState.canDelay = true;
+                attackState.hasAttacked = false;
                 return attackState;
             }
             else //if (!targetInRange)
@@ -87,5 +100,18 @@ public class AngryState : State
         {
             return this;
         }
+    }
+
+    private IEnumerator DelayCoroutine()
+    {
+        float delay = 3.0f;
+        WaitForSeconds wait = new WaitForSeconds(delay);
+
+        //while (true)
+        //{
+            yield return wait;
+            delayCheck = true;
+            //Debug.Log("angry delay");
+        //}
     }
 }

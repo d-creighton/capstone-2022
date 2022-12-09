@@ -4,19 +4,22 @@ using UnityEngine;
 
 public static class Timer
 {
-    public static Coroutine DelayActionRetriggerable(MonoBehaviour monoBehavior,
+    public static Coroutine DelayActionRetriggerable(State state,
     bool flag, float time, Coroutine coroutine)
     {
         if (coroutine != null)
         {
-            monoBehavior.StopCoroutine(coroutine);
+            state.StopCoroutine(coroutine);
         }
-        return monoBehavior.StartCoroutine(DelayActionRoutine(flag, time));
+        flag = true;
+        return state.StartCoroutine(DelayActionRoutine(flag, time));
     }
 
     private static IEnumerator DelayActionRoutine(bool flag, float time)
     {
         yield return new WaitForSeconds(time);
-        flag = true;
+        //flag = true;
+        Debug.Log(flag);
+        //yield return flag;
     }
 }
