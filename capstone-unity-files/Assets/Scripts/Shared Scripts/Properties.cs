@@ -6,14 +6,17 @@ using UnityEngine.UI;
 public class Properties : MonoBehaviour
 {
     public string unitName;
+
     public int unitLevel;
 
     public int maxHP;
+
     public int currentHP;
 
     public BarFunctionality healthBar;
 
     public GameObject CompanionPrefab;
+
     public BossIdleState bossIdleState;
 
     public Button button;
@@ -22,14 +25,20 @@ public class Properties : MonoBehaviour
     void Start()
     {
         //gameObject = GetComponent<tag>();
-
         if (this.gameObject.CompareTag("Friendly"))
         {
-            bossIdleState = GameObject.FindWithTag("Boss Idle State").GetComponent<BossIdleState>();
-            healthBar = GameObject.FindWithTag("AI Healthbar").GetComponent<BarFunctionality>();
+            bossIdleState =
+                GameObject
+                    .FindWithTag("Boss Idle State")
+                    .GetComponent<BossIdleState>();
+            healthBar =
+                GameObject
+                    .FindWithTag("AI Healthbar")
+                    .GetComponent<BarFunctionality>();
 
-            Button[] activeAndInactive = GameObject.FindObjectsOfType<Button>(true);
-            for (int i=0; i<activeAndInactive.Length; i++)
+            Button[] activeAndInactive =
+                GameObject.FindObjectsOfType<Button>(true);
+            for (int i = 0; i < activeAndInactive.Length; i++)
             {
                 if (activeAndInactive[i].CompareTag("Heal Button"))
                 {
@@ -39,10 +48,9 @@ public class Properties : MonoBehaviour
             }
         }
 
-
         currentHP = maxHP;
-        healthBar.SetMaxSliderValue(maxHP);
-        healthBar.SetLabel(currentHP, maxHP, unitName);
+        healthBar.SetMaxSliderValue (maxHP);
+        healthBar.SetLabel (currentHP, maxHP, unitName);
     }
 
     // Call if projectile hits
@@ -52,15 +60,15 @@ public class Properties : MonoBehaviour
 
         // Take damage
         currentHP -= damageTaken;
-        healthBar.SetValue(currentHP);
-        healthBar.SetLabel(currentHP, maxHP, unitName);
+        healthBar.SetValue (currentHP);
+        healthBar.SetLabel (currentHP, maxHP, unitName);
 
         // Check if this unit has died
-        if(currentHP <= 0)
+        if (currentHP <= 0)
         {
             currentHP = 0;
-            healthBar.SetValue(currentHP);
-            healthBar.SetLabel(currentHP, maxHP, unitName);
+            healthBar.SetValue (currentHP);
+            healthBar.SetLabel (currentHP, maxHP, unitName);
             return true;
         }
         else
@@ -73,14 +81,20 @@ public class Properties : MonoBehaviour
     {
         Debug.Log("Healing: " + gameObject);
         currentHP += potion;
-        if(currentHP > maxHP) { currentHP = maxHP; }
+        if (currentHP > maxHP)
+        {
+            currentHP = maxHP;
+        }
 
-        healthBar.SetValue(currentHP);
-        healthBar.SetLabel(currentHP, maxHP, unitName);
+        healthBar.SetValue (currentHP);
+        healthBar.SetLabel (currentHP, maxHP, unitName);
     }
 
     public void Revive()
     {
-        GameObject torterra = Instantiate(CompanionPrefab, new Vector3(10,0,10), Quaternion.identity);
+        GameObject torterra =
+            Instantiate(CompanionPrefab,
+            new Vector3(10, 0, 10),
+            Quaternion.identity);
     }
 }

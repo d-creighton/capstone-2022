@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class BossIdleState : State
 {
-    Rigidbody bossRigidBody;            // This object's Rigidbody
-    public AngryState angryState;       // The next state after this state
-    public bool wasAttacked = false;    // Determine if the next state should be triggered
+    Rigidbody bossRigidBody; // This object's Rigidbody
+
+    public AngryState angryState; // The next state after this state
+
+    public bool wasAttacked = false; // Determine if the next state should be triggered
 
     //AngryState selectTarget;
-
     bool flag = true;
 
-    void Start() 
+    void Start()
     {
         // Get Rigidbody
         bossRigidBody = GetComponent<Rigidbody>();
@@ -24,12 +25,11 @@ public class BossIdleState : State
         angryState.oneTarget = true;
 
         // turn randomly
-
         if (flag)
         {
             Debug.Log("Palkia is idle.");
             flag = false;
-        }        
+        }
 
         if (wasAttacked)
         {
@@ -42,7 +42,7 @@ public class BossIdleState : State
     }
 
     // detect tag of actual "attack" and move to next state
-    private void OnCollisionEnter(Collision collision) 
+    private void OnCollisionEnter(Collision collision)
     {
         // laser = entity of the attack itself
         GameObject laser = collision.gameObject;

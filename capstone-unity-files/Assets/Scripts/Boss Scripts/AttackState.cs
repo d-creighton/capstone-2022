@@ -5,8 +5,11 @@ using UnityEngine;
 public class AttackState : State
 {
     public AttackDelay attackDelay;
+
     public AngryState angryState;
+
     public Attack bossAttack;
+
     public bool hasAttacked = false;
 
     public bool canAttack;
@@ -14,33 +17,30 @@ public class AttackState : State
     public GameObject targetToAttack;
 
     //bool flag = true;
-
     public bool canDelay = false;
+
     Coroutine timeDelay;
 
     public override State RunCurrentState()
     {
-        
-
         /* if (flag)
         {
             Debug.Log("Palkia is attacking the target.");
             flag = false;
         } */
-        
         if (canDelay)
         {
             Debug.Log("Palkia is attacking the target.");
-            Debug.Log(hasAttacked);
+            Debug.Log (hasAttacked);
+
             //timeDelay = Timer.DelayActionRetriggerable(this, canAttack, 3.0f, timeDelay);
             StartCoroutine(DelayCoroutine());
             canDelay = false;
-        } 
-        
+        }
+
         // Attack the chosen target
         if (canAttack)
         {
-            
             targetToAttack = angryState.target;
             bossAttack.targetRef = targetToAttack;
             bossAttack.WeakAttack();
@@ -67,9 +67,9 @@ public class AttackState : State
 
         //while (true)
         //{
-            yield return wait;
-            canAttack = true;
-            //Debug.Log("attack delay");
+        yield return wait;
+        canAttack = true;
+        //Debug.Log("attack delay");
         //}
     }
 }

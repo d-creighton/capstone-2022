@@ -6,17 +6,19 @@ using UnityEngine.UI;
 public class CostVerification : MonoBehaviour
 {
     public bool canInteract;
+
     public Button button;
 
     public int price;
 
     public ATBSystem ATB;
+
     public KeyCodeToOnClick verify;
 
     // Start is called before the first frame update
     void Start()
     {
-        if(verify.needsVerified)
+        if (verify.needsVerified)
         {
             canInteract = false;
         }
@@ -31,7 +33,7 @@ public class CostVerification : MonoBehaviour
     {
         // check atb amount
         // set button interactable to true if desired amount reached
-        if(ATB.currentATB >= price)
+        if (ATB.currentATB >= price)
         {
             canInteract = true;
             button.interactable = true;

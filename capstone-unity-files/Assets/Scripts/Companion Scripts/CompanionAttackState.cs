@@ -5,6 +5,7 @@ using UnityEngine;
 public class CompanionAttackState : State
 {
     public CompanionIdleState idleState;
+
     //public bool canAttack;
     public bool hasAttacked;
 
@@ -12,6 +13,7 @@ public class CompanionAttackState : State
     public int attackStrength = 0;
 
     public Attack attackPool;
+
     public AudioSource pokemonCry;
 
     public override State RunCurrentState()
@@ -19,15 +21,16 @@ public class CompanionAttackState : State
         // Cry semi-randomly
         pokemonCry = GetComponent<AudioSource>();
         pokemonCry.Play();
+
         // Attack boss
-        if(attackStrength == 1)
+        if (attackStrength == 1)
         {
             //Debug.Log("Torterra is weakly attacking Palkia.");
             attackPool.WeakAttack();
             attackStrength = 0;
             hasAttacked = true;
         }
-        else if(attackStrength == 2)
+        else if (attackStrength == 2)
         {
             //Debug.Log("Torterra is strongly attacking Palkia.");
             attackPool.StrongAttack();

@@ -7,14 +7,19 @@ public class Attack : MonoBehaviour
 {
     //public bool canAttack = false;
     public CompanionAttackState attackChoice;
+
     public CompanionIdleState giveCommand;
+
     public GameObject targetRef;
+
     public Properties targetRefProp;
 
     public GameObject rootObject;
+
     public Transform rootTransform;
 
     public Button button1;
+
     public Button button2;
 
     void Start()
@@ -27,11 +32,18 @@ public class Attack : MonoBehaviour
             targetRef = GameObject.FindWithTag("Enemy");
             targetRefProp = targetRef.GetComponent<Properties>();
 
-            attackChoice = GameObject.FindWithTag("AI Attack State").GetComponent<CompanionAttackState>();
-            giveCommand = GameObject.FindWithTag("AI Idle State").GetComponent<CompanionIdleState>();
+            attackChoice =
+                GameObject
+                    .FindWithTag("AI Attack State")
+                    .GetComponent<CompanionAttackState>();
+            giveCommand =
+                GameObject
+                    .FindWithTag("AI Idle State")
+                    .GetComponent<CompanionIdleState>();
 
-            Button[] activeAndInactive = GameObject.FindObjectsOfType<Button>(true);
-            for (int i=0; i<activeAndInactive.Length; i++)
+            Button[] activeAndInactive =
+                GameObject.FindObjectsOfType<Button>(true);
+            for (int i = 0; i < activeAndInactive.Length; i++)
             {
                 if (activeAndInactive[i].CompareTag("Button1"))
                 {
@@ -58,8 +70,8 @@ public class Attack : MonoBehaviour
         //subtract 25 (1/4) health from target
         targetRefProp = targetRef.GetComponent<Properties>();
         bool isDead = targetRefProp.TakeDamage(25);
-        //spawn projectile in direction of target
 
+        //spawn projectile in direction of target
         //check if target has died
         if (isDead)
         {
@@ -68,15 +80,15 @@ public class Attack : MonoBehaviour
             {
                 //win game
             }
-            //if player dies end game
-            else if (targetRef.CompareTag("Player"))
+            else //if player dies end game
+            if (targetRef.CompareTag("Player"))
             {
                 //game over
             }
-            //if AI dies delete gameobject
             else
+            //if AI dies delete gameobject
             {
-                Destroy(targetRef);
+                Destroy (targetRef);
             }
         }
         else
@@ -90,8 +102,8 @@ public class Attack : MonoBehaviour
         //subtract 50 (1/2) health from target
         targetRefProp = targetRef.GetComponent<Properties>();
         bool isDead = targetRefProp.TakeDamage(50);
-        //spawn projectile in direction of target
 
+        //spawn projectile in direction of target
         //check if target has died
         if (isDead)
         {

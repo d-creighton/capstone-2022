@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class BarFunctionality : MonoBehaviour
 {
     public Slider slider;
+
     public Text label;
-    
+
     public void SetMaxSliderValue(int value)
     {
         slider.maxValue = value;

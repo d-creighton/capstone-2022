@@ -5,12 +5,14 @@ using UnityEngine;
 public class FieldOfView : MonoBehaviour
 {
     public float radius;
-    [Range(0,360)]
+
+    [Range(0, 360)]
     public float angle;
 
     public GameObject targetRef = null;
 
     public LayerMask targetMask;
+
     public LayerMask obstructionMask;
 
     public bool canSeeTarget;
@@ -23,6 +25,7 @@ public class FieldOfView : MonoBehaviour
         //targetRef = GameObject.FindGameObjectWithTag("");
         //want to find target each time it changes
         targetRef = angryState.target;
+
         //Debug.Log("Starting Coroutine");
         StartCoroutine(FOVRoutine());
     }
@@ -35,6 +38,7 @@ public class FieldOfView : MonoBehaviour
         while (true)
         {
             yield return wait;
+
             //targetRef = angryState.target;
             //Debug.Log("Checking FOV");
             FieldOfViewCheck();
@@ -45,17 +49,17 @@ public class FieldOfView : MonoBehaviour
     {
         //GameObject targetRef;
         //targetRef = angryState.target;
-
         // add anything that overlaps to the array
-        Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
+        Collider[] rangeChecks =
+            Physics.OverlapSphere(transform.position, radius, targetMask);
 
-        if(rangeChecks.Length != 0)
+        if (rangeChecks.Length != 0)
         {
             //Debug.Log("if 1");
-            for(int i=0; i<rangeChecks.Length; i++)
+            for (int i = 0; i < rangeChecks.Length; i++)
             {
                 //Debug.Log("for 1");
-                if(rangeChecks[i] == targetRef)
+                if (rangeChecks[i] == targetRef)
                 {
                     //Debug.Log("if 2");
                     canSeeTarget = true;
@@ -65,18 +69,28 @@ public class FieldOfView : MonoBehaviour
             }
 
             //Debug.Log("Transform target");
-            if(targetRef != null)
+            if (targetRef != null)
             {
                 Transform target = targetRef.transform;
-                Vector3 directionToTarget = (target.position - transform.position).normalized;
-            
+                Vector3 directionToTarget =
+                    (target.position - transform.position).normalized;
 
-                if(Vector3.Angle(transform.forward, directionToTarget) < angle / 2)
+                if (
+                    Vector3.Angle(transform.forward, directionToTarget) <
+                    angle / 2
+                )
                 {
                     //Debug.Log("if Vector3");
-                    float distanceToTarget = Vector3.Distance(transform.position, target.position);
+                    float distanceToTarget =
+                        Vector3.Distance(transform.position, target.position);
 
-                    if(!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
+                    if (
+                        !Physics
+                            .Raycast(transform.position,
+                            directionToTarget,
+                            distanceToTarget,
+                            obstructionMask)
+                    )
                     {
                         //Debug.Log("if !Physics");
                         canSeeTarget = true;
@@ -97,7 +111,7 @@ public class FieldOfView : MonoBehaviour
                 }
             }
         }
-        else if(canSeeTarget)
+        else if (canSeeTarget)
         {
             //Debug.Log("if canSeeTarget");
             canSeeTarget = false;
