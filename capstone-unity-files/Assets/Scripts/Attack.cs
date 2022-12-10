@@ -22,10 +22,14 @@ public class Attack : MonoBehaviour
 
     public Button button2;
 
+    public FireProjectile fireProjectile;
+
     void Start()
     {
         rootTransform = this.transform.root;
         rootObject = rootTransform.gameObject;
+
+        fireProjectile = gameObject.GetComponent<FireProjectile>();
 
         if (rootObject.CompareTag("Friendly"))
         {
@@ -61,6 +65,17 @@ public class Attack : MonoBehaviour
 
     public void AttackChoice(int choice)
     {
+        targetRefProp = targetRef.GetComponent<Properties>();
+        if (choice == 1)
+        {
+            targetRefProp.attackChoiceOfAttacker = 25;
+        }
+        else
+        {
+            targetRefProp.attackChoiceOfAttacker = 50;
+        }
+        
+
         attackChoice.attackStrength = choice;
         giveCommand.commandReceived = true;
     }
@@ -69,11 +84,13 @@ public class Attack : MonoBehaviour
     {
         //subtract 25 (1/4) health from target
         targetRefProp = targetRef.GetComponent<Properties>();
-        bool isDead = targetRefProp.TakeDamage(25);
+        //bool isDead = targetRefProp.TakeDamage(25);
 
-        //spawn projectile in direction of target
+        //spawn fireProjectile in direction of target
+        fireProjectile.Shoot();
+
         //check if target has died
-        if (isDead)
+        /* if (isDead)
         {
             //if boss died end game
             if (targetRef.CompareTag("Enemy"))
@@ -94,24 +111,26 @@ public class Attack : MonoBehaviour
         else
         {
             return;
-        }
+        } */
     }
 
     public void StrongAttack()
     {
         //subtract 50 (1/2) health from target
         targetRefProp = targetRef.GetComponent<Properties>();
-        bool isDead = targetRefProp.TakeDamage(50);
+        //bool isDead = targetRefProp.TakeDamage(50);
 
-        //spawn projectile in direction of target
+        //spawn fireProjectile in direction of target
+        fireProjectile.Shoot();
+
         //check if target has died
-        if (isDead)
+        /* if (isDead)
         {
             //if boss died end game
         }
         else
         {
             return;
-        }
+        } */
     }
 }

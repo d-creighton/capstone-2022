@@ -266,7 +266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3123071772312459731, guid: 0d521a69c6b592b4ebd62e2bfe8c49fe, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3123071772312459731, guid: 0d521a69c6b592b4ebd62e2bfe8c49fe, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2813,7 +2813,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17680
+  m_Name: pb_Mesh17648
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7232,7 +7232,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3123071772312459731, guid: 0d521a69c6b592b4ebd62e2bfe8c49fe, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3123071772312459731, guid: 0d521a69c6b592b4ebd62e2bfe8c49fe, type: 3}
       propertyPath: m_AnchorMax.x
@@ -8391,6 +8391,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1456381049, guid: 13c1d5dbf13bbd5438126e1f8204bcd3, type: 3}
+      propertyPath: force
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1456381049, guid: 13c1d5dbf13bbd5438126e1f8204bcd3, type: 3}
+      propertyPath: offset
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5596782209131788481, guid: 13c1d5dbf13bbd5438126e1f8204bcd3, type: 3}
       propertyPath: m_Name
       value: Companion GameObject
@@ -8439,13 +8447,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5596782209333265329, guid: 13c1d5dbf13bbd5438126e1f8204bcd3, type: 3}
-      propertyPath: giveCommand
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5596782209333265329, guid: 13c1d5dbf13bbd5438126e1f8204bcd3, type: 3}
-      propertyPath: attackChoice
-      value: 
+    - target: {fileID: 5596782209333265328, guid: 13c1d5dbf13bbd5438126e1f8204bcd3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13c1d5dbf13bbd5438126e1f8204bcd3, type: 3}
@@ -8456,6 +8460,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8679529, guid: ef4801925f108264184e8828670fa645, type: 3}
+      propertyPath: force
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8679529, guid: ef4801925f108264184e8828670fa645, type: 3}
+      propertyPath: offset
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1546558624, guid: ef4801925f108264184e8828670fa645, type: 3}
+      propertyPath: m_Size.y
+      value: 10.04594
+      objectReference: {fileID: 0}
+    - target: {fileID: 1546558624, guid: ef4801925f108264184e8828670fa645, type: 3}
+      propertyPath: m_Center.y
+      value: 3.985809
+      objectReference: {fileID: 0}
     - target: {fileID: 8089857402112918447, guid: ef4801925f108264184e8828670fa645, type: 3}
       propertyPath: generator
       value: 
@@ -8520,5 +8540,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss GameObject
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8089857404112297169, guid: ef4801925f108264184e8828670fa645, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 712005191, guid: ef4801925f108264184e8828670fa645, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ef4801925f108264184e8828670fa645, type: 3}

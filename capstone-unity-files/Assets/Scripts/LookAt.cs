@@ -50,13 +50,16 @@ public class LookAt : MonoBehaviour
         Vector3 direction = targetTransform.position - rootTransform.position;
         Quaternion rotation = Quaternion.LookRotation(direction);
 
-        //transform.rotation = rotation;
+        //rootTransform.rotation = rotation;
         rootTransform.rotation =
             Quaternion
                 .Lerp(rootTransform.rotation, rotation, speed * Time.deltaTime);
 
         if (fov != null && fov.canSeeTarget)
         {
+            rootTransform.rotation =
+            Quaternion
+                .Lerp(rootTransform.rotation, rotation, speed * Time.deltaTime);
             spinState.targetFound = true;
         }
         if (seekingState != null)

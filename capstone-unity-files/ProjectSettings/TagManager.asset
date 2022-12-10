@@ -18,6 +18,7 @@ TagManager:
   - Button1
   - Button2
   - Heal Button
+  - Projectile
   layers:
   - Default
   - TransparentFX
