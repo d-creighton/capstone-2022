@@ -20,6 +20,7 @@ public class Properties : MonoBehaviour
     public BossIdleState bossIdleState;
 
     public Button button;
+
     public int attackChoiceOfAttacker;
 
     // Start is called before the first frame update

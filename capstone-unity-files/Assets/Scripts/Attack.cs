@@ -74,7 +74,6 @@ public class Attack : MonoBehaviour
         {
             targetRefProp.attackChoiceOfAttacker = 50;
         }
-        
 
         attackChoice.attackStrength = choice;
         giveCommand.commandReceived = true;
@@ -84,8 +83,8 @@ public class Attack : MonoBehaviour
     {
         //subtract 25 (1/4) health from target
         targetRefProp = targetRef.GetComponent<Properties>();
-        //bool isDead = targetRefProp.TakeDamage(25);
 
+        //bool isDead = targetRefProp.TakeDamage(25);
         //spawn fireProjectile in direction of target
         fireProjectile.Shoot();
 
@@ -118,8 +117,8 @@ public class Attack : MonoBehaviour
     {
         //subtract 50 (1/2) health from target
         targetRefProp = targetRef.GetComponent<Properties>();
-        //bool isDead = targetRefProp.TakeDamage(50);
 
+        //bool isDead = targetRefProp.TakeDamage(50);
         //spawn fireProjectile in direction of target
         fireProjectile.Shoot();
 

@@ -42,16 +42,18 @@ public class AngryState : State
         //Debug.Log("Angry 1");
         // Find aggressor using weighted prio system
         // Call weighted prio system
-        runMethod = generator.GetComponent<WeightedPriority>();
-
         // Find the target returned
         if (oneTarget)
         {
+            runMethod = generator.GetComponent<WeightedPriority>();
+            runMethod.GenerateRandomWeight();
+            randomTarget = WeightedPriority.finalValue;
+
             Debug.Log("Palkia is angry.");
             cry = GetComponent<AudioSource>();
             cry.Play();
 
-            runMethod.GenerateRandomWeight();
+            /* runMethod.GenerateRandomWeight();
             randomTarget = WeightedPriority.finalValue;
 
             if (randomTarget == 2)
@@ -59,6 +61,7 @@ public class AngryState : State
                 //target is companion
                 //find companion
                 target = GameObject.FindGameObjectWithTag("Friendly");
+                Debug.Log (target);
 
                 //check if AI is still alive
                 if (target == null)
@@ -79,10 +82,36 @@ public class AngryState : State
 
                 //timeDelay = Timer.DelayActionRetriggerable(this, delayCheck, 3.0f, timeDelay);
                 StartCoroutine(DelayCoroutine());
-            }
-
+            } */
+            StartCoroutine(DelayCoroutine());
             oneTarget = false;
             //Debug.Log("oneTarget f");
+        }
+
+        if (randomTarget == 2)
+        {
+            //target is companion
+            //find companion
+            target = GameObject.FindGameObjectWithTag("Friendly");
+            Debug.Log (target);
+
+            //check if AI is still alive
+            if (target == null)
+            {
+                target = GameObject.FindGameObjectWithTag("Player");
+            }
+            fov.targetRef = target;
+
+            //StartCoroutine(DelayCoroutine());
+        }
+        else
+        {
+            //target is player
+            //find player
+            target = GameObject.FindGameObjectWithTag("Player");
+            fov.targetRef = target;
+
+            //StartCoroutine(DelayCoroutine());
         }
 
         //Debug.Log(delayCheck);

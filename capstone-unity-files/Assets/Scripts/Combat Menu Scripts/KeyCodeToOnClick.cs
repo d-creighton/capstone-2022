@@ -13,6 +13,8 @@ public class KeyCodeToOnClick : MonoBehaviour
 
     public CostVerification verify;
 
+    public GameObject companion;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +24,17 @@ public class KeyCodeToOnClick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(key) && verify.canInteract)
+        if (button.CompareTag("Revive Button"))
+        {
+            companion = GameObject.FindWithTag("Friendly");
+
+            if (Input.GetKeyDown(key) && verify.canInteract && companion == null
+            )
+            {
+                button.onClick.Invoke();
+            }
+        }
+        else if (Input.GetKeyDown(key) && verify.canInteract)
         {
             button.onClick.Invoke();
         }

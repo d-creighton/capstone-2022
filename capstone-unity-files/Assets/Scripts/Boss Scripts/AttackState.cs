@@ -42,6 +42,17 @@ public class AttackState : State
         if (canAttack)
         {
             targetToAttack = angryState.target;
+
+            Debug.Log (targetToAttack);
+
+            /* if (targetToAttack != null)
+            {
+                targetToAttack = GameObject.FindGameObjectWithTag("Friendly");
+            }
+            else
+            {
+                targetToAttack = GameObject.FindGameObjectWithTag("Player");
+            } */
             bossAttack.targetRef = targetToAttack;
             bossAttack.WeakAttack();
             hasAttacked = true;
