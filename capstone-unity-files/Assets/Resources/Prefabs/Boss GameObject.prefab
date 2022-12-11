@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8089857402112918441}
   - component: {fileID: 8089857402112918447}
   - component: {fileID: 8089857402112918440}
-  - component: {fileID: 694203207}
   m_Layer: 8
   m_Name: Angry State
   m_TagString: Boss Angry State
@@ -152,23 +151,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &694203207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8089857402112918446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e7f4f0ab6ac2e947ac81b79f8a1926a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  secondsToWait: 5
-  secondsSinceLast: 0
-  initiateDelay: 0
-  attackState: {fileID: 0}
-  angryState: {fileID: 8089857402112918447}
 --- !u!1 &8089857402276305851
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,7 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 70
-  angle: 1
+  angle: 5
   targetRef: {fileID: 0}
   targetMask:
     serializedVersion: 2
@@ -339,7 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 601c0e7acc4095d4f9022adb72a73d44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 4
   rootObject: {fileID: 0}
   rootTransform: {fileID: 0}
   fov: {fileID: 0}
@@ -632,7 +614,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b12266533229ac340a84f7aa681dd5e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDelay: {fileID: 712005191, guid: ef4801925f108264184e8828670fa645, type: 3}
   angryState: {fileID: 8089857402112918447}
   bossAttack: {fileID: 8089857404112297170}
   hasAttacked: 0

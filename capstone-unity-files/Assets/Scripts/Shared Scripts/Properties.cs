@@ -94,9 +94,23 @@ public class Properties : MonoBehaviour
 
     public void Revive()
     {
+        // Spawn companion nearby player
+        // Find player's current position
+        GameObject player = GameObject.FindWithTag("Player");
+        Transform playerTransform = player.GetComponent<Transform>();
+
+        // y axis will always be the same
+        float playerX = playerTransform.position.x;
+        float playerZ = playerTransform.position.z;
+
+        playerX = playerX + -Random.Range(2.0f, 5.0f);
+        playerZ = playerZ + -Random.Range(2.0f, 5.0f);
+
+        //Debug.Log (playerX);
+        //Debug.Log (playerZ);
         GameObject torterra =
             Instantiate(CompanionPrefab,
-            new Vector3(10, 0, 10),
+            new Vector3(playerX, 0.1f, playerZ),
             Quaternion.identity);
     }
 }

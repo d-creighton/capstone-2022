@@ -18,12 +18,15 @@ public class SeekingState : State
 
     public Transform rootTransform;
 
-    public override State RunCurrentState()
+    void Start()
     {
         rootTransform = this.transform.root;
         rootObject = rootTransform.gameObject;
         fov = rootObject.GetComponent<FieldOfView>();
+    }
 
+    public override State RunCurrentState()
+    {
         // Locate boss
         boss = GameObject.FindWithTag("Enemy");
         fov.targetRef = boss;

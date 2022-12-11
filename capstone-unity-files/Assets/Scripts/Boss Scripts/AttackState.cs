@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class AttackState : State
 {
-    public AttackDelay attackDelay;
-
     public AngryState angryState;
 
     public Attack bossAttack;

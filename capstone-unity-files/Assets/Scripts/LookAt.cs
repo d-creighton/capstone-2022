@@ -55,23 +55,22 @@ public class LookAt : MonoBehaviour
         rootTransform.rotation =
             Quaternion
                 .Lerp(rootTransform.rotation, rotation, speed * Time.deltaTime);
-
         if (spinState != null && fov.canSeeTarget)
         {
-            rootTransform.rotation =
+            /* rootTransform.rotation =
                 Quaternion
                     .Lerp(rootTransform.rotation,
                     rotation,
-                    speed * Time.deltaTime);
+                    speed * Time.deltaTime); */
             spinState.targetFound = true;
         }
         if (seekingState != null && fov.canSeeTarget)
         {
-            rootTransform.rotation =
+            /* rootTransform.rotation =
                 Quaternion
                     .Lerp(rootTransform.rotation,
                     rotation,
-                    speed * Time.deltaTime);
+                    speed * Time.deltaTime); */
             seekingState.bossFound = true;
         }
     }

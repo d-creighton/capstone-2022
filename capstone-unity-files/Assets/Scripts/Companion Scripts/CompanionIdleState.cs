@@ -8,9 +8,24 @@ public class CompanionIdleState : State
 
     public bool commandReceived = false;
 
+    public CompanionMovement movement;
+
+    public Transform rootTransform;
+
+    public GameObject rootObject;
+
     //public bool isIdle = true;
     //public GameObject thisUnit;
-    //public AudioSource cry;
+    public AudioSource cry;
+
+    void Start()
+    {
+        rootTransform = this.transform.root;
+        rootObject = rootTransform.gameObject;
+        movement = rootObject.GetComponent<CompanionMovement>();
+        cry = rootObject.GetComponent<AudioSource>();
+    }
+
     public override State RunCurrentState()
     {
         // Await commands from player
@@ -24,14 +39,22 @@ public class CompanionIdleState : State
         //take weighted number to determine cry
         //pokemonCry = GetComponent<AudioSource>();
         //pokemonCry.Play();
-        //cry = GetComponent<AudioSource>();
-        //cry.Play();
+        int randomNumber = Random.Range(0, 10);
+        if (randomNumber % 2 == 0)
+        {
+            Debug.Log (randomNumber);
+            cry.Play();
+        }
+
         //StartCoroutine(CryRepeater());
         // Dodge boss attacks
         // Execute small auto-attacks
         //Debug.Log("Torterra is awaiting commands.");
+        movement.canFollow = true;
+
         if (commandReceived)
         {
+            movement.canFollow = false;
             commandReceived = false;
             return seekingState;
         }

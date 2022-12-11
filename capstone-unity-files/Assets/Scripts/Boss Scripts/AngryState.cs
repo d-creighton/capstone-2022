@@ -93,8 +93,8 @@ public class AngryState : State
             //target is companion
             //find companion
             target = GameObject.FindGameObjectWithTag("Friendly");
-            Debug.Log (target);
 
+            //Debug.Log (target);
             //check if AI is still alive
             if (target == null)
             {
