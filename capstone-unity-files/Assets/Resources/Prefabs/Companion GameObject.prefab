@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 5596782209131788484}
   - component: {fileID: 5596782209131788485}
   - component: {fileID: 774939970}
+  - component: {fileID: 774939974}
   m_Layer: 6
   m_Name: Companion GameObject
   m_TagString: Friendly
@@ -274,6 +275,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.5, y: 1.4136853, z: 4.7860413}
   m_Center: {x: 0, y: 0.79315734, z: 0.14302063}
+--- !u!114 &774939974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5596782209131788481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b5c40c2cc85ebe48af33fe5d93e3b7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 70
+  angle: 70
+  targetRef: {fileID: 0}
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 0
+  obstructionMask:
+    serializedVersion: 2
+    m_Bits: 0
+  canSeeTarget: 0
+  confirmTarget: 0
+  angryState: {fileID: 0}
+  seekingState: {fileID: 0}
 --- !u!1 &5596782209146078569
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,7 +514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 0}
-  force: 10
+  force: 15
   offset: 5
 --- !u!1 &5596782209487826834
 GameObject:
@@ -776,6 +802,9 @@ MonoBehaviour:
   bossFound: 0
   boss: {fileID: 0}
   faceBoss: {fileID: 5596782210082488771}
+  fov: {fileID: 0}
+  rootObject: {fileID: 0}
+  rootTransform: {fileID: 0}
 --- !u!114 &5596782210082488771
 MonoBehaviour:
   m_ObjectHideFlags: 0

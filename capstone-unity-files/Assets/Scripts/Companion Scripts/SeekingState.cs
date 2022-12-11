@@ -12,17 +12,28 @@ public class SeekingState : State
 
     public LookAt faceBoss;
 
+    public FieldOfView fov;
+
+    public GameObject rootObject;
+
+    public Transform rootTransform;
+
     public override State RunCurrentState()
     {
+        rootTransform = this.transform.root;
+        rootObject = rootTransform.gameObject;
+        fov = rootObject.GetComponent<FieldOfView>();
+
         // Locate boss
         boss = GameObject.FindWithTag("Enemy");
+        fov.targetRef = boss;
 
         //if (boss == null) return;
         //Rigidbody bossRigidbody = boss.GetComponent<Rigidbody>();
         //Transform bossTransform = boss.GetComponent<Transform>();
         // Face in direction of boss
         //bossFound = faceBoss.LookAtTarget();
-        faceBoss.LookAtTarget (boss);
+        faceBoss.LookAtTarget(fov.targetRef);
 
         //bossFound = true;
         //Debug.Log("Torterra is seeking Palkia.");

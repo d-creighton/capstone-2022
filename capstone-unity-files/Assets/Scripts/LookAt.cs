@@ -27,12 +27,13 @@ public class LookAt : MonoBehaviour
         //rootTransform = rootObject.GetComponent<Transform>();
         if (rootObject.CompareTag("Friendly"))
         {
+            fov = rootObject.GetComponent<FieldOfView>();
             seekingState =
                 GameObject
                     .FindWithTag("AI Seeking State")
                     .GetComponent<SeekingState>();
-        }
-        else if (rootObject.CompareTag("Enemy"))
+        } //if (rootObject.CompareTag("Enemy"))
+        else
         {
             fov = rootObject.GetComponent<FieldOfView>();
             spinState =
@@ -55,16 +56,23 @@ public class LookAt : MonoBehaviour
             Quaternion
                 .Lerp(rootTransform.rotation, rotation, speed * Time.deltaTime);
 
-        if (fov != null && fov.canSeeTarget)
+        if (spinState != null && fov.canSeeTarget)
         {
             rootTransform.rotation =
-            Quaternion
-                .Lerp(rootTransform.rotation, rotation, speed * Time.deltaTime);
+                Quaternion
+                    .Lerp(rootTransform.rotation,
+                    rotation,
+                    speed * Time.deltaTime);
             spinState.targetFound = true;
         }
-        if (seekingState != null)
+        if (seekingState != null && fov.canSeeTarget)
         {
-            //seekingState.bossFound = true;
+            rootTransform.rotation =
+                Quaternion
+                    .Lerp(rootTransform.rotation,
+                    rotation,
+                    speed * Time.deltaTime);
+            seekingState.bossFound = true;
         }
     }
 }

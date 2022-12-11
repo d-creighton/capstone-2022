@@ -88,6 +88,8 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   CompanionPrefab: {fileID: 5596782209131788481, guid: 13c1d5dbf13bbd5438126e1f8204bcd3, type: 3}
   bossIdleState: {fileID: 0}
+  button: {fileID: 0}
+  attackChoiceOfAttacker: 0
 --- !u!65 &4831282357388187013
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8089857402112918447}
   - component: {fileID: 8089857402112918440}
   - component: {fileID: 694203207}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Angry State
   m_TagString: Boss Angry State
   m_Icon: {fileID: 0}
@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 8089857402276305798}
   - component: {fileID: 8089857402276305799}
   - component: {fileID: 1546558624}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Boss GameObject
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 70
-  angle: 70
+  angle: 1
   targetRef: {fileID: 0}
   targetMask:
     serializedVersion: 2
@@ -240,7 +240,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   canSeeTarget: 0
+  confirmTarget: 0
   angryState: {fileID: 8089857402112918447}
+  seekingState: {fileID: 0}
 --- !u!114 &8089857402276305799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,8 +275,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.5, y: 11, z: 6.5}
-  m_Center: {x: -0.068154335, y: 4.9158854, z: 0.07665062}
+  m_Size: {x: 6.5, y: 10.04594, z: 6.5}
+  m_Center: {x: -0.068154335, y: 3.985809, z: 0.07665062}
 --- !u!1 &8089857402378079545
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +288,7 @@ GameObject:
   - component: {fileID: 8089857402378079546}
   - component: {fileID: 8089857402378079547}
   - component: {fileID: 1497192201}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Spin State
   m_TagString: Boss Spin State
   m_Icon: {fileID: 0}
@@ -354,7 +356,7 @@ GameObject:
   - component: {fileID: 8089857402658267920}
   - component: {fileID: 8089857402658267923}
   - component: {fileID: 8089857402658267922}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -433,7 +435,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8089857403023965165}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: States
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -468,7 +470,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8089857403217485437}
   - component: {fileID: 8089857403217485438}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Idle State
   m_TagString: Boss Idle State
   m_Icon: {fileID: 0}
@@ -514,7 +516,7 @@ GameObject:
   - component: {fileID: 8089857403972484789}
   - component: {fileID: 8089857403972484784}
   - component: {fileID: 8089857403972484791}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Boss Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -596,9 +598,8 @@ GameObject:
   - component: {fileID: 8089857404112297169}
   - component: {fileID: 8089857404112297168}
   - component: {fileID: 8089857404112297170}
-  - component: {fileID: 712005191}
   - component: {fileID: 8679529}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Attack State
   m_TagString: Boss Attack State
   m_Icon: {fileID: 0}
@@ -613,7 +614,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8089857404112297175}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8089857403023965165}
@@ -631,7 +632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b12266533229ac340a84f7aa681dd5e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDelay: {fileID: 712005191}
+  attackDelay: {fileID: 712005191, guid: ef4801925f108264184e8828670fa645, type: 3}
   angryState: {fileID: 8089857402112918447}
   bossAttack: {fileID: 8089857404112297170}
   hasAttacked: 0
@@ -659,23 +660,6 @@ MonoBehaviour:
   button1: {fileID: 0}
   button2: {fileID: 0}
   fireProjectile: {fileID: 0}
---- !u!114 &712005191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8089857404112297175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e7f4f0ab6ac2e947ac81b79f8a1926a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  secondsToWait: 5
-  secondsSinceLast: 0
-  initiateDelay: 0
-  attackState: {fileID: 8089857404112297168}
-  angryState: {fileID: 0}
 --- !u!114 &8679529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -689,5 +673,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 0}
-  force: 5
-  offset: 2
+  force: 20
+  offset: 10

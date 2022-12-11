@@ -17,14 +17,31 @@ public class FieldOfView : MonoBehaviour
 
     public bool canSeeTarget;
 
+    public bool confirmTarget;
+
     public AngryState angryState;
+
+    public SeekingState seekingState;
 
     private void Start()
     {
         //get target from AngryState
         //targetRef = GameObject.FindGameObjectWithTag("");
         //want to find target each time it changes
-        targetRef = angryState.target;
+        if (gameObject.CompareTag("Friendly"))
+        {
+            targetRef = GameObject.FindWithTag("Enemy");
+            seekingState =
+                GameObject
+                    .FindWithTag("AI Seeking State")
+                    .GetComponent<SeekingState>();
+
+            targetMask = LayerMask.GetMask("Enemies");
+            obstructionMask = LayerMask.GetMask("Obstruction");
+
+            radius = 70;
+            angle = 1;
+        }
 
         //Debug.Log("Starting Coroutine");
         StartCoroutine(FOVRoutine());
@@ -94,20 +111,20 @@ public class FieldOfView : MonoBehaviour
                     {
                         //Debug.Log("if !Physics");
                         canSeeTarget = true;
-                        angryState.targetInRange = true;
+                        confirmTarget = true;
                     }
                     else
                     {
                         //Debug.Log("if Physics");
                         canSeeTarget = false;
-                        angryState.targetInRange = false;
+                        confirmTarget = false;
                     }
                 }
                 else
                 {
                     //Debug.Log("if !Vector3");
                     canSeeTarget = false;
-                    angryState.targetInRange = false;
+                    confirmTarget = false;
                 }
             }
         }
@@ -115,7 +132,16 @@ public class FieldOfView : MonoBehaviour
         {
             //Debug.Log("if canSeeTarget");
             canSeeTarget = false;
-            angryState.targetInRange = false;
+            confirmTarget = false;
+        }
+
+        if (gameObject.CompareTag("Friendly"))
+        {
+            seekingState.bossFound = confirmTarget;
+        }
+        else
+        {
+            angryState.targetInRange = confirmTarget;
         }
     }
 }
