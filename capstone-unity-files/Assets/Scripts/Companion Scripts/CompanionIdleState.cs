@@ -16,14 +16,14 @@ public class CompanionIdleState : State
 
     //public bool isIdle = true;
     //public GameObject thisUnit;
-    public AudioSource cry;
+    //public AudioSource cry;
 
     void Start()
     {
         rootTransform = this.transform.root;
         rootObject = rootTransform.gameObject;
         movement = rootObject.GetComponent<CompanionMovement>();
-        cry = rootObject.GetComponent<AudioSource>();
+        //cry = rootObject.GetComponent<AudioSource>();
     }
 
     public override State RunCurrentState()
@@ -39,12 +39,12 @@ public class CompanionIdleState : State
         //take weighted number to determine cry
         //pokemonCry = GetComponent<AudioSource>();
         //pokemonCry.Play();
-        int randomNumber = Random.Range(0, 10);
+        /* int randomNumber = Random.Range(0, 10);
         if (randomNumber % 2 == 0)
         {
             Debug.Log (randomNumber);
             cry.Play();
-        }
+        } */
 
         //StartCoroutine(CryRepeater());
         // Dodge boss attacks
