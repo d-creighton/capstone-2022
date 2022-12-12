@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ProjectileOnCollision : MonoBehaviour
 {
@@ -22,6 +23,9 @@ public class ProjectileOnCollision : MonoBehaviour
             if (isDead)
             {
                 // Win game
+                Destroy(collision.gameObject);
+                Cursor.lockState = CursorLockMode.None;
+                SceneManager.LoadScene(2);
             }
 
             // Destroy projectile
@@ -42,6 +46,9 @@ public class ProjectileOnCollision : MonoBehaviour
                 if (collision.gameObject.CompareTag("Player"))
                 {
                     // Game over
+                    Destroy(collision.gameObject);
+                    Cursor.lockState = CursorLockMode.None;
+                    SceneManager.LoadScene(3);
                 }
                 else
                 {
