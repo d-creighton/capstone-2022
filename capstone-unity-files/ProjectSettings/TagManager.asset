@@ -3,7 +3,23 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Generator
+  - Enemy
+  - Friendly
+  - AI Healthbar
+  - Boss Idle State
+  - Boss Angry State
+  - Boss Spin State
+  - Boss Attack State
+  - AI Idle State
+  - AI Seeking State
+  - AI Attack State
+  - Button1
+  - Button2
+  - Heal Button
+  - Projectile
+  - Revive Button
   layers:
   - Default
   - TransparentFX
@@ -11,9 +27,9 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Target
+  - Obstruction
+  - Enemies
   - 
   - 
   - 
