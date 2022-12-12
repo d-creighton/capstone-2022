@@ -1,6 +1,8 @@
 Using pre-set license
 Built from '2020.3/release' branch; Version is '2020.3.12f1 (b3b2c6512326) revision 11776710'; Using compiler version '192528614'; Build Type 'Release'
+
 OS: 'Windows 10 Home; OS build 19044.2251; Version 2009; 64bit' Language: 'en' Physical Memory: 16334 MB
+
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
@@ -15,11 +17,13 @@ D:/Unity/Projects/capstone-2022/capstone-unity-files
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
+
 60341
 Successfully changed project path to: D:/Unity/Projects/capstone-2022/capstone-unity-files
 D:/Unity/Projects/capstone-2022/capstone-unity-files
 Using Asset Import Pipeline V2.
 Refreshing native plugins compatible for Editor in 47.69 ms, found 2 plugins.
+
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.12f1 (b3b2c6512326)
 [Subsystems] Discovering subsystems at path D:/Unity/2020.3.12f1/Editor/Data/Resources/UnitySubsystems
@@ -35,6 +39,7 @@ Initialize mono
 Mono path[0] = 'D:/Unity/2020.3.12f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'D:/Unity/2020.3.12f1/Editor/Data/MonoBleedingEdge/etc'
+
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56388
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
@@ -67,6 +72,7 @@ System memory in use after: 87.3 MB.
 Unloading 21 unused Assets to reduce memory usage. Loaded Objects now: 2384.
 Total: 3.355100 ms (FindLiveObjects: 0.364600 ms CreateObjectMapping: 0.079500 ms MarkObjects: 2.703400 ms  DeleteObjects: 0.206000 ms)
 
+
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -79,6 +85,7 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
+
   path: Assets/Scenes/Main Menu.unity
   artifactKey: Guid(f9fb766d4ffdb434a86d487c2ea59ddf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scenes/Main Menu.unity using Guid(f9fb766d4ffdb434a86d487c2ea59ddf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e7db3d63f96eceb2fba5c1394d517e0d') in 0.020826 seconds 
@@ -292,15 +299,19 @@ Received Import Request.
 Start importing Assets/Scenes/MainGame.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e80f74617f57d208190b4cf91e921160') in 0.006546 seconds 
   Import took 0.009824 seconds .
 
+
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+
 Registered in 0.003266 seconds.
+
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.48 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
+
 - Completed reload, in  1.077 seconds
 Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.48 ms, found 2 plugins.
@@ -311,6 +322,7 @@ System memory in use after: 88.2 MB.
 
 Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 2406.
 Total: 2.340500 ms (FindLiveObjects: 0.208600 ms CreateObjectMapping: 0.052100 ms MarkObjects: 1.940600 ms  DeleteObjects: 0.138000 ms)
+
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -325,6 +337,7 @@ AssetImportParameters requested are different than current active one (requested
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+
 Registered in 0.003223 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
@@ -1554,6 +1567,7 @@ System memory in use after: 89.9 MB.
 Unloading 29 unused Assets to reduce memory usage. Loaded Objects now: 2500.
 Total: 2.723700 ms (FindLiveObjects: 0.231400 ms CreateObjectMapping: 0.050900 ms MarkObjects: 1.961300 ms  DeleteObjects: 0.478800 ms)
 
+
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -1564,4 +1578,3 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-AssetImportWorkerClient::OnTransportError - code=2 error=End of file
