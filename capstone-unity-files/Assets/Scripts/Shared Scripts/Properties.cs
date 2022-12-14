@@ -26,7 +26,6 @@ public class Properties : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //gameObject = GetComponent<tag>();
         if (this.gameObject.CompareTag("Friendly"))
         {
             bossIdleState =
@@ -38,6 +37,7 @@ public class Properties : MonoBehaviour
                     .FindWithTag("AI Healthbar")
                     .GetComponent<BarFunctionality>();
 
+            // reassign listeners to heal button when companion is revived
             Button[] activeAndInactive =
                 GameObject.FindObjectsOfType<Button>(true);
             for (int i = 0; i < activeAndInactive.Length; i++)

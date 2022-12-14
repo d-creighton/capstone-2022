@@ -14,24 +14,16 @@ public class AttackState : State
 
     public GameObject targetToAttack;
 
-    //bool flag = true;
     public bool canDelay = false;
 
     Coroutine timeDelay;
 
     public override State RunCurrentState()
     {
-        /* if (flag)
-        {
-            Debug.Log("Palkia is attacking the target.");
-            flag = false;
-        } */
         if (canDelay)
         {
-            Debug.Log("Palkia is attacking the target.");
-            Debug.Log (hasAttacked);
-
-            //timeDelay = Timer.DelayActionRetriggerable(this, canAttack, 3.0f, timeDelay);
+            //Debug.Log("Palkia is attacking the target.");
+            //Debug.Log (hasAttacked);
             StartCoroutine(DelayCoroutine());
             canDelay = false;
         }
@@ -41,16 +33,7 @@ public class AttackState : State
         {
             targetToAttack = angryState.target;
 
-            Debug.Log (targetToAttack);
-
-            /* if (targetToAttack != null)
-            {
-                targetToAttack = GameObject.FindGameObjectWithTag("Friendly");
-            }
-            else
-            {
-                targetToAttack = GameObject.FindGameObjectWithTag("Player");
-            } */
+            //Debug.Log (targetToAttack);
             bossAttack.targetRef = targetToAttack;
             bossAttack.WeakAttack();
             hasAttacked = true;
@@ -69,16 +52,13 @@ public class AttackState : State
         }
     }
 
+    // Time delay before attacking
     private IEnumerator DelayCoroutine()
     {
         float delay = 1.0f;
         WaitForSeconds wait = new WaitForSeconds(delay);
 
-        //while (true)
-        //{
         yield return wait;
         canAttack = true;
-        //Debug.Log("attack delay");
-        //}
     }
 }

@@ -24,6 +24,7 @@ public class KeyCodeToOnClick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // verify companion is dead to allow use of revive item
         if (button.CompareTag("Revive Button"))
         {
             companion = GameObject.FindWithTag("Friendly");

@@ -16,29 +16,18 @@ public class SpinState : State
 
     public FieldOfView fov;
 
-    bool flag = true;
-
+    //bool flag = true;
     public override State RunCurrentState()
     {
-        if (flag)
+        /* if (flag)
         {
             Debug.Log("Palkia is aiming at the target.");
             flag = false;
-        }
-
+        } */
         // Face target found in AngryState
-        //targetToAim = angryState.target;
         // turn to that target until FieldOfView.canSeeTarget == true
-        //if (!fov.canSeeTarget)
-        //{
         lookAt.LookAtTarget(fov.targetRef);
 
-        //targetFound = true;
-        //}
-        /* if (fov.canSeeTarget)
-        {
-            targetFound = true;
-        } */
         if (targetFound)
         {
             targetFound = false;

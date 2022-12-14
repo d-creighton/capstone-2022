@@ -24,22 +24,12 @@ public class AngryState : State
 
     public AudioSource cry;
 
-    //bool flag = true;
     public bool delayCheck = false;
 
     Coroutine timeDelay;
 
     public override State RunCurrentState()
     {
-        //delayCheck = false;
-        /* if (flag)
-        {
-            Debug.Log("Palkia is angry.");
-            flag = false;
-        } */
-        // Stop turning randomly
-        // Roar
-        //Debug.Log("Angry 1");
         // Find aggressor using weighted prio system
         // Call weighted prio system
         // Find the target returned
@@ -53,39 +43,8 @@ public class AngryState : State
             cry = GetComponent<AudioSource>();
             cry.Play();
 
-            /* runMethod.GenerateRandomWeight();
-            randomTarget = WeightedPriority.finalValue;
-
-            if (randomTarget == 2)
-            {
-                //target is companion
-                //find companion
-                target = GameObject.FindGameObjectWithTag("Friendly");
-                Debug.Log (target);
-
-                //check if AI is still alive
-                if (target == null)
-                {
-                    target = GameObject.FindGameObjectWithTag("Player");
-                }
-                fov.targetRef = target;
-
-                //timeDelay = Timer.DelayActionRetriggerable(this, delayCheck, 3.0f, timeDelay);
-                StartCoroutine(DelayCoroutine());
-            }
-            else
-            {
-                //target is player
-                //find player
-                target = GameObject.FindGameObjectWithTag("Player");
-                fov.targetRef = target;
-
-                //timeDelay = Timer.DelayActionRetriggerable(this, delayCheck, 3.0f, timeDelay);
-                StartCoroutine(DelayCoroutine());
-            } */
             StartCoroutine(DelayCoroutine());
             oneTarget = false;
-            //Debug.Log("oneTarget f");
         }
 
         if (randomTarget == 2)
@@ -101,8 +60,6 @@ public class AngryState : State
                 target = GameObject.FindGameObjectWithTag("Player");
             }
             fov.targetRef = target;
-
-            //StartCoroutine(DelayCoroutine());
         }
         else
         {
@@ -110,8 +67,6 @@ public class AngryState : State
             //find player
             target = GameObject.FindGameObjectWithTag("Player");
             fov.targetRef = target;
-
-            //StartCoroutine(DelayCoroutine());
         }
 
         //Debug.Log(delayCheck);
@@ -122,7 +77,7 @@ public class AngryState : State
             {
                 attackState.canDelay = true;
                 return attackState;
-            } //if (!targetInRange)
+            }
             else
             {
                 return spinState;
@@ -134,16 +89,13 @@ public class AngryState : State
         }
     }
 
+    // Time delay before moving into next state
     private IEnumerator DelayCoroutine()
     {
         float delay = 5.0f;
         WaitForSeconds wait = new WaitForSeconds(delay);
 
-        //while (true)
-        //{
         yield return wait;
         delayCheck = true;
-        //Debug.Log("angry delay");
-        //}
     }
 }

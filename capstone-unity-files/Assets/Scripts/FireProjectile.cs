@@ -11,42 +11,23 @@ public class FireProjectile : MonoBehaviour
     public float offset = 2f; // Instantiation offset
 
     private Object[] prefabs;
+
     private string[] pfRoots;
 
     void Start()
     {
-        // Find inactive projectile prefab
-        /* GameObject[] gObjList = GameObject.FindObjectsOfType<GameObject>(true);
-        for (int i=0; i<gObjList.Length; i++)
-        {
-            Debug.Log(gObjList[i]);
-            if (gObjList[i].CompareTag("Projectile"))
-            {
-                projectile = gObjList[i];
-            }
-        } */
-        //Debug.Log("prefabs");
         prefabs = Resources.LoadAll("Prefabs");
         pfRoots = new string[prefabs.Length];
-        for (int i=0; i<prefabs.Length; i++)
+        for (int i = 0; i < prefabs.Length; i++)
         {
-            //pfRoots[i] = prefabs[i].ToString();
+            // Find projectile prefab
             //Debug.Log(pfRoots[i]);
             if (prefabs[i].ToString() == "Projectile (UnityEngine.GameObject)")
             {
                 projectile = prefabs[i] as GameObject;
-                Debug.Log(projectile);
+                Debug.Log (projectile);
             }
         }
-        /* for (int i=0; i<pfRoots.Length; i++)
-        {
-            //Debug.Log(pfRoots[i]);
-            if (pfRoots[i] == "Projectile (UnityEngine.GameObject)")
-            {
-                Debug.Log(pfRoots[i]);
-                projectile = pfRoots[i].GetComponent<GameObject>();
-            }
-        } */
     }
 
     public void Shoot()

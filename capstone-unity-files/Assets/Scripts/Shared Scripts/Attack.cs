@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Attack : MonoBehaviour
 {
-    //public bool canAttack = false;
     public CompanionAttackState attackChoice;
 
     public CompanionIdleState giveCommand;
@@ -31,6 +30,7 @@ public class Attack : MonoBehaviour
 
         fireProjectile = gameObject.GetComponent<FireProjectile>();
 
+        // companion will always attack boss
         if (rootObject.CompareTag("Friendly"))
         {
             targetRef = GameObject.FindWithTag("Enemy");
@@ -45,6 +45,7 @@ public class Attack : MonoBehaviour
                     .FindWithTag("AI Idle State")
                     .GetComponent<CompanionIdleState>();
 
+            // reassign listeners to attack buttons when companion is revived
             Button[] activeAndInactive =
                 GameObject.FindObjectsOfType<Button>(true);
             for (int i = 0; i < activeAndInactive.Length; i++)
@@ -81,55 +82,19 @@ public class Attack : MonoBehaviour
 
     public void WeakAttack()
     {
-        //subtract 25 (1/4) health from target
+        //subtract 25  health from target
         targetRefProp = targetRef.GetComponent<Properties>();
 
-        //bool isDead = targetRefProp.TakeDamage(25);
-        //spawn fireProjectile in direction of target
+        // spawn fireProjectile in direction of target
         fireProjectile.Shoot();
-
-        //check if target has died
-        /* if (isDead)
-        {
-            //if boss died end game
-            if (targetRef.CompareTag("Enemy"))
-            {
-                //win game
-            }
-            else //if player dies end game
-            if (targetRef.CompareTag("Player"))
-            {
-                //game over
-            }
-            else
-            //if AI dies delete gameobject
-            {
-                Destroy (targetRef);
-            }
-        }
-        else
-        {
-            return;
-        } */
     }
 
     public void StrongAttack()
     {
-        //subtract 50 (1/2) health from target
+        //subtract 50 health from target
         targetRefProp = targetRef.GetComponent<Properties>();
 
-        //bool isDead = targetRefProp.TakeDamage(50);
         //spawn fireProjectile in direction of target
         fireProjectile.Shoot();
-
-        //check if target has died
-        /* if (isDead)
-        {
-            //if boss died end game
-        }
-        else
-        {
-            return;
-        } */
     }
 }

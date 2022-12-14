@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CompanionMovement : MonoBehaviour
 {
-    //public Transform transform; // This object's transform
     public float distancePerSecond = 10.0f; // Speed of this object
 
     public bool followPlayer; // Determine if player is close enough to follow
@@ -35,11 +34,6 @@ public class CompanionMovement : MonoBehaviour
                 lookAt.LookAtTarget (player);
 
                 // Move toward player
-                /* Vector3 delta =
-                    playerTransform.position - this.transform.position;
-                delta.Normalize();
-                this.transform.position +=
-                    delta * distancePerSecond * Time.deltaTime; */
                 float step = distancePerSecond * Time.deltaTime;
                 Vector3 playerPosition =
                     new Vector3(playerTransform.position.x,

@@ -24,9 +24,4 @@ public class BarFunctionality : MonoBehaviour
     {
         label.text = name + "   " + currentValue + "/" + maxValue;
     }
-
-    /* public void SetHolder(GameObject gameObject)
-    {
-
-    } */
 }

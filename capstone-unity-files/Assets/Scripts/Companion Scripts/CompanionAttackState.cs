@@ -6,7 +6,6 @@ public class CompanionAttackState : State
 {
     public CompanionIdleState idleState;
 
-    //public bool canAttack;
     public bool hasAttacked;
 
     // value of 0-2, 0 means cannot attack, 1 is weak attack, 2 is strong attack
@@ -18,7 +17,7 @@ public class CompanionAttackState : State
 
     public override State RunCurrentState()
     {
-        // Cry semi-randomly
+        // Cry
         pokemonCry = GetComponent<AudioSource>();
         pokemonCry.Play();
 

@@ -7,6 +7,7 @@ public class ProjectileOnCollision : MonoBehaviour
 {
     void Update()
     {
+        // Destroy projectile if it doesn't hit anything
         Destroy(this.gameObject, 5.0f);
     }
 
@@ -58,7 +59,7 @@ public class ProjectileOnCollision : MonoBehaviour
 
             // Destroy projectile
             Destroy(this.gameObject);
-        } //if (!collision.gameObject.CompareTag("Projectile"))
+        }
         else
         {
             // Destroy projectile
