@@ -11,6 +11,6 @@ Some things of note about this project:
  
 If you want to download my game and try it for yourself, the file "Boxeymon.exe" is what you need to download. Once you download the file, running it should bring up the main menu screen.
 Controls:
- WASD moves the player
- Look around with the mouse
- Press F to open the on-screen menu and use the listed keys to navigate (Q, E, C)
+ - WASD moves the player
+ - Look around with the mouse
+ - Press F to open the on-screen menu and use the listed keys to navigate (Q, E, C)
