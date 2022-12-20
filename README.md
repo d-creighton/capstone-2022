@@ -9,7 +9,8 @@ Some things of note about this project:
  - Specifically, I wanted to highlight my finite state machine designs for the AI
  - There are missing features which didn't make it into the final product mostly due to time, maybe I'll revisit this someday and add them!
  
-If you want to download my game and try it for yourself, the file "Boxeymon.exe" is what you need to download. Once you download the file, running it should bring up the main menu screen.
+If you want to download my game and try it for yourself, click on the file "Boxeymon.exe" and then click download. Once you download the file, running it should bring up the main menu screen.
+*THIS HAS ONLY BEEN TESTED ON WINDOWS*
 Controls:
  - WASD moves the player
  - Look around with the mouse
