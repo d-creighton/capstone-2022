@@ -14,6 +14,7 @@ Windows
  - Navigate to Builds -> Windows -> Installer -> Boxeymon Setup.exe and click download
  - If Windows prevents the application from running, select more info and run anyway (I swear its not a virus)
  - Follow the steps in the installer and run the Boxeymon.exe file
+
 Mac
  - Navigate to Builds -> Mac -> x86 -> Boxeymon.zip and click download
  - Inside the zipped folder should be a .app that can be run on your system
@@ -28,7 +29,7 @@ Mac
 
   This folder contains the actual executable file which Windows apparently didn’t make executable. Once inside the MacOS folder, add the next line:
 
-  ```chmod +x <APP_NAME>```
+  ```chmod +x Boxeymon```
   
  The app should now be able to open. 
 
