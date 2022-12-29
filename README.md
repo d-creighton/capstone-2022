@@ -9,9 +9,28 @@ Some things of note about this project:
  - Specifically, I wanted to highlight my finite state machine designs for the AI
  - There are missing features which didn't make it into the final product mostly due to time, maybe I'll revisit this someday and add them!
  
-If you want to download my game and try it for yourself, downlaod the contents in the folder labelled "Game". Once you download the files, running the .exe should bring up the main menu screen.
+Download instructions:
+Windows
+ - Navigate to Builds -> Windows -> Installer -> Boxeymon Setup.exe and click download
+ - If Windows prevents the application from running, select more info and run anyway (I swear its not a virus)
+ - Follow the steps in the installer and run the Boxeymon.exe file
+Mac
+ - Navigate to Builds -> Mac -> x86 -> Boxeymon.zip and click download
+ - Inside the zipped folder should be a .app that can be run on your system
+ - Open the zipped folder
+ - Open the app that appears after opening the zipped folder
+ 
+ *If you cannot open the app on your Mac system:*
+  Open up Terminal and navigate to your app folder:
+  
+  ```cd <PATH_TO_YOUR_APP>/Boxeymon.app/Contents/MacOS/```
 
-*THIS HAS ONLY BEEN TESTED ON WINDOWS*
+  This folder contains the actual executable file which Windows apparently didn’t make executable. Once inside the MacOS folder, add the next line:
+
+  ```chmod +x <APP_NAME>```
+  
+ The app should now be able to open. 
+
 
 Controls:
  - WASD moves the player
