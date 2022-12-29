@@ -21,6 +21,7 @@ Mac
  - Open the app that appears after opening the zipped folder
  
  *If you cannot open the app on your Mac system:*
+ 
   Open up Terminal and navigate to your app folder:
   
   ```cd <PATH_TO_YOUR_APP>/Boxeymon.app/Contents/MacOS/```
